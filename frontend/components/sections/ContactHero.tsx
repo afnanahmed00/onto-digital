@@ -8,7 +8,7 @@ export default function ContactHero() {
         </span>
 
         <h1 className="mt-3 max-w-[42rem] font-[var(--font-heading)] text-[1.5rem] font-medium uppercase leading-tight sm:text-[1.85rem] lg:text-[2.2rem]">
-          LET'S BUILD SOMETHING
+          LET&apos;S BUILD SOMETHING
           <br />
           <span className="text-[#51FF73]">EXTRAORDINARY</span> TOGETHER
         </h1>
@@ -16,7 +16,7 @@ export default function ContactHero() {
         <p className="mt-3 max-w-[32rem] text-[0.82rem] leading-[1.8] text-[#A7A7A7] sm:text-[0.88rem]">
           Have a project in mind or just want to say hello?
           <br className="hidden sm:block" />
-          We'd love to hear from you.
+          We&apos;d love to hear from you.
         </p>
 
       </div>

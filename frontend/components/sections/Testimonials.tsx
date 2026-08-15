@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -139,9 +140,11 @@ export default function Testimonials() {
                     </p>
 
                     <div className="mt-6 flex items-center gap-3">
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.name}
+                        width={44}
+                        height={44}
                         className="h-11 w-11 rounded-full object-cover"
                       />
                       <div>

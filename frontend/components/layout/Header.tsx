@@ -14,7 +14,7 @@ export default function Header() {
           variant="pill"
           className="px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.08em] sm:px-5 sm:py-2.5 sm:text-xs lg:px-6 lg:py-3 lg:text-sm"
         >
-          Let's Talk
+          Let&apos;s Talk
         </Button>
       </div>
     </header>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const stats = [
   {
@@ -70,7 +71,7 @@ export default function AboutHero() {
                 ↗
               </span>
 
-              LET'S BUILD TOGETHER
+              LET&apos;S BUILD TOGETHER
             </Link>
 
           </div>
@@ -81,12 +82,14 @@ export default function AboutHero() {
 
             {/* Image */}
 
-            <div className="overflow-hidden rounded-[22px] border border-[#2A2A2A] bg-[#050505]">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[22px] border border-[#2A2A2A] bg-[#050505]">
 
-              <img
+              <Image
                 src="/images/projects/p1.png"
                 alt="About ONTO DIGITAL"
-                className="aspect-[16/10] w-full object-cover"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
               />
 
             </div>

@@ -5,9 +5,9 @@ export const SITE = {
   description:
     "ONTO DIGITAL is a premium web development agency building modern websites, web applications, branding, and digital experiences.",
 
-  email: "hello@ontodigital.in",
+  email: "ontodigital.in@gmail.com",
 
-  phone: "+91 XXXXX XXXXX",
+  phone: "917036431874",
 
   address: "Hyderabad, India",
 

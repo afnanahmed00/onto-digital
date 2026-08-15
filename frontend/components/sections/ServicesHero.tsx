@@ -31,7 +31,7 @@ export default function ServicesHero() {
               size={16}
               className="text-[#51FF73] transition-colors group-hover:text-black"
             />
-            LET'S BUILD TOGETHER
+            LET&apos;S BUILD TOGETHER
           </Link>
 
           <Link

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const CENTER = { x: 680, y: 260 };
 const RINGS = [40, 85, 135, 190, 250, 315, 385];
 const SPOKES = Array.from({ length: 12 }, (_, i) => (i * 360) / 12);
@@ -52,7 +54,10 @@ export default function CTA() {
             </div>
 
             <div className="flex justify-center lg:w-[42%] lg:justify-end">
-              <button className="group flex h-[60px] items-center gap-4 rounded-[18px] border border-[#51FF73] bg-black px-8 lg:px-10 font-[var(--font-heading)] text-[0.8rem] lg:text-[0.85rem] font-medium uppercase tracking-[0.08em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(81,255,115,0.3)]">
+              <Link
+                href="/contact"
+                className="group flex h-[60px] items-center gap-4 rounded-[18px] border border-[#51FF73] bg-black px-8 lg:px-10 font-[var(--font-heading)] text-[0.8rem] lg:text-[0.85rem] font-medium uppercase tracking-[0.08em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(81,255,115,0.3)]"
+              >
                 <span className="text-[#51FF73] transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
                   ↗
                 </span>
@@ -60,7 +65,7 @@ export default function CTA() {
                 <span className="text-[#51FF73] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                   ↗
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

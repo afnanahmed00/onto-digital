@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Work() {
   const projects = [
     {
@@ -61,11 +64,13 @@ export default function Work() {
               >
                 {/* Image */}
                 <div className="overflow-hidden p-2 pb-0">
-                  <div className="overflow-hidden rounded-2xl">
-                    <img
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
+                    <Image
                       src={project.image}
                       alt={project.title}
-                      className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                 </div>
@@ -100,13 +105,16 @@ export default function Work() {
         {/* View All CTA — after all projects */}
         <div className="flex justify-center lg:justify-end">
 
-          <button className="group flex items-center gap-4 font-[var(--font-heading)] text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]">
+          <Link
+            href="/projects"
+            className="group flex items-center gap-4 font-[var(--font-heading)] text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]"
+          >
             VIEW ALL CASE STUDIES
 
             <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
               ↗
             </span>
-          </button>
+          </Link>
 
         </div>
 

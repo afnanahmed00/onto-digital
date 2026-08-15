@@ -43,7 +43,7 @@ const FOOTER_COLUMNS: { title: string; links: { label: string; href: string }[] 
 const SOCIAL_LINKS: { name: string; href: string; icon: ElementType }[] = [
   { name: "LinkedIn", href: SOCIALS.linkedin || "#", icon: LinkedinIcon },
   { name: "X", href: SOCIALS.x || "#", icon: XIcon },
-  { name: "Dribbble", href: SOCIALS.github || "#", icon: DribbbleIcon },
+  { name: "Dribbble", href: SOCIALS.dribbble || "#", icon: DribbbleIcon },
   { name: "Instagram", href: SOCIALS.instagram || "#", icon: InstagramIcon },
 ];
 

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Services() {
 
     const services = [
@@ -59,12 +61,15 @@ export default function Services() {
                         fast, scalable and designed to deliver real results.
                     </p>
 
-                    <button className="group mt-5 flex items-center gap-4 font-[var(--font-heading)] text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]">
+                    <Link
+                        href="/services"
+                        className="group mt-5 flex items-center gap-4 font-[var(--font-heading)] text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]"
+                    >
                         Explore All Services
                         <span className="transition-transform duration-300 group-hover:translate-x-1">
                             ↗
                         </span>
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Right Grid */}

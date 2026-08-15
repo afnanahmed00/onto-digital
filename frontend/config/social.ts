@@ -1,6 +1,7 @@
 export const SOCIALS = {
-  instagram: "",
+  instagram: "https://www.instagram.com/ontodigital.in/",
   linkedin: "",
   github: "",
+  dribbble: "",
   x: "",
 };

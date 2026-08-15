@@ -25,6 +25,7 @@ export const contactInfo: ContactInfoItem[] = [
     title: "WHATSAPP",
     value: SITE.phone,
     description: "Available Monday to Saturday.",
+    href: `https://wa.me/${SITE.phone.replace(/\D/g, "")}`,
   },
   {
     icon: InstagramIcon,
