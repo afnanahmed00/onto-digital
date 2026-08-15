@@ -1,0 +1,9 @@
+:root{
+
+--transition-fast:.2s;
+--transition:.3s;
+--transition-slow:.6s;
+
+--ease:cubic-bezier(.4,0,.2,1);
+
+}
