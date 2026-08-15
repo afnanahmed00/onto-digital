@@ -1,3 +1,5 @@
+export type { Project, ProjectSize } from "./project";
+
 export type ContactFormData = {
   fullName: string;
   email: string;
