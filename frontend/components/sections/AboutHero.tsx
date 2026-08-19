@@ -3,12 +3,12 @@ import Image from "next/image";
 
 const stats = [
   {
-    value: "5+",
+    value: "3+",
     label: "YEARS OF",
     sub: "EXPERIENCE",
   },
   {
-    value: "200+",
+    value: "10+",
     label: "PROJECTS",
     sub: "DELIVERED",
   },
@@ -18,7 +18,7 @@ const stats = [
     sub: "SATISFACTION",
   },
   {
-    value: "20+",
+    value: "9+",
     label: "INDUSTRIES",
     sub: "SERVED",
   },
@@ -85,7 +85,7 @@ export default function AboutHero() {
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[20px] border border-[#2A2A2A] bg-[#050505]">
 
               <Image
-                src="/images/projects/p1.png"
+                src="/images/abouthero/abthero.png"
                 alt="About ONTO DIGITAL"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"

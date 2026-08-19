@@ -15,7 +15,7 @@ type Stat = {
 const stats: Stat[] = [
   {
     icon: Rocket,
-    value: 200,
+    value: 10,
     suffix: "+",
     title: "PROJECTS",
     subtitle: "DELIVERED",
@@ -29,14 +29,14 @@ const stats: Stat[] = [
   },
   {
     icon: Users,
-    value: 50,
+    value: 5,
     suffix: "+",
     title: "EXPERTS &",
     subtitle: "CREATIVES",
   },
   {
     icon: Trophy,
-    value: 5,
+    value: 2.5,
     suffix: "+",
     title: "YEARS OF",
     subtitle: "EXPERIENCE",

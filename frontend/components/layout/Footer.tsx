@@ -11,29 +11,29 @@ const FOOTER_COLUMNS: { title: string; links: { label: string; href: string }[] 
   {
     title: "Services",
     links: [
-      { label: "Web Development", href: "/services" },
-      { label: "Web Applications", href: "/services" },
-      { label: "UI/UX Design", href: "/services" },
-      { label: "E-Commerce", href: "/services" },
-      { label: "Branding & Identity", href: "/services" },
-      { label: "Maintenance & Support", href: "/services" },
+      { label: "Business Websites", href: "/services/business-websites" },
+      { label: "WordPress Websites", href: "/services/wordpress-websites" },
+      { label: "Portfolio Websites", href: "/services/portfolio-websites" },
+      { label: "E-Commerce Websites", href: "/services/ecommerce-websites" },
+      { label: "Landing Pages", href: "/services/landing-pages" },
+      { label: "Website Redesign", href: "/services/website-redesign" },
+      { label: "Website Maintenance", href: "/services/website-maintenance" },
+      { label: "Custom Web Applications", href: "/services/web-applications" },
     ],
   },
   {
-    title: "Company",
+    title: "Quick Links",
     links: [
+      { label: "Home", href: "/" },
       { label: "About Us", href: "/about" },
-      { label: "Our Process", href: "/#process" },
-      { label: "Case Studies", href: "/projects" },
-      { label: "Blog", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: " Our Services", href: "/services" },
+      { label: "Contact", href: "/contact" },
+      { label: "Projects", href: "/projects" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Documentation", href: "#" },
-      { label: "Help Center", href: "#" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-and-conditions" },
     ],
@@ -118,7 +118,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-[15px] text-[var(--text-secondary)]">
                 <Phone size={16} className="shrink-0 text-[var(--primary)]" />
-                <a href={`tel:${SITE.phone}`} className="hover:text-white">
+                <a href={`https://wa.me/${SITE.phone.replace(/\D/g, "")}`} className="hover:text-white">
                   {SITE.phone}
                 </a>
               </li>

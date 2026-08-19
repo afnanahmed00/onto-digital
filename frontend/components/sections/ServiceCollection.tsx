@@ -1,43 +1,6 @@
-import { Code2, Box, PenTool, ShoppingBag, Target, ShieldCheck, ArrowUpRight } from "lucide-react";
-
-const services = [
-  {
-    icon: Code2,
-    title: "WEB DEVELOPMENT",
-    description:
-      "High-performance websites built with modern technologies for speed, scalability and seamless experiences.",
-  },
-  {
-    icon: Box,
-    title: "WEB APPLICATIONS",
-    description:
-      "Powerful custom web applications to streamline processes and accelerate your business growth.",
-  },
-  {
-    icon: PenTool,
-    title: "UI/UX DESIGN",
-    description:
-      "Beautiful, intuitive designs that engage users and turn complex ideas into simple experiences.",
-  },
-  {
-    icon: ShoppingBag,
-    title: "E-COMMERCE SOLUTIONS",
-    description:
-      "Conversion-focused eCommerce solutions that drive sales and deliver exceptional customer experiences.",
-  },
-  {
-    icon: Target,
-    title: "BRANDING & IDENTITY",
-    description:
-      "Strong brand identities that communicate value and create lasting impressions.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "MAINTENANCE & SUPPORT",
-    description:
-      "Ongoing support and maintenance to keep your digital products secure, fast and up-to-date.",
-  },
-];
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { services } from "@/data/services";
 
 export default function ServiceCollection() {
   return (
@@ -60,7 +23,7 @@ export default function ServiceCollection() {
 
             return (
               <div
-                key={service.title}
+                key={service.slug}
                 className="group relative flex flex-col overflow-hidden rounded-[1.25rem] border border-[#262626] bg-[#050505] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#51FF73] hover:shadow-[0_0_30px_rgba(81,255,115,.15)] sm:p-7 lg:p-8"
               >
                 {/* Top shine */}
@@ -71,20 +34,23 @@ export default function ServiceCollection() {
                 </div>
 
                 <h3 className="relative mt-5 font-[var(--font-heading)] text-[1rem] font-medium uppercase leading-[1.2] text-white sm:text-[1.1rem]">
-                  {service.title}
+                  {service.breadcrumbLabel.toUpperCase()}
                 </h3>
 
                 <p className="relative mt-3 flex-1 text-[0.82rem] leading-[1.7] text-[#A7A7A7]">
-                  {service.description}
+                  {service.shortDescription}
                 </p>
 
-                <button className="group/link relative mt-6 flex items-center gap-2 self-start font-[var(--font-heading)] text-[0.72rem] font-medium uppercase tracking-[0.1em] text-[#51FF73]">
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group/link relative mt-6 flex items-center gap-2 self-start font-[var(--font-heading)] text-[0.72rem] font-medium uppercase tracking-[0.1em] text-[#51FF73]"
+                >
                   LEARN MORE
                   <ArrowUpRight
                     size={14}
                     className="transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1"
                   />
-                </button>
+                </Link>
               </div>
             );
           })}

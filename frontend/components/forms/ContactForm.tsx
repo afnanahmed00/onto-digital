@@ -30,14 +30,14 @@ const INITIAL_STATE: ContactFormData = {
 };
 
 const SERVICE_OPTIONS = [
-  { value: "web-design", label: "Web Design" },
-  { value: "web-development", label: "Web Development" },
-  { value: "shopify", label: "Shopify Store" },
-  { value: "wordpress", label: "WordPress Website" },
-  { value: "ecommerce", label: "E-Commerce Solutions" },
-  { value: "ui-ux", label: "UI/UX Design" },
-  { value: "branding", label: "Branding & Identity" },
-  { value: "maintenance", label: "Website Maintenance" },
+  { value: "business-websites", label: "Business Websites" },
+  { value: "wordpress-websites", label: "WordPress Websites" },
+  { value: "portfolio-websites", label: "Portfolio Websites" },
+  { value: "ecommerce-websites", label: "E-Commerce Websites" },
+  { value: "landing-pages", label: "Landing Pages" },
+  { value: "website-redesign", label: "Website Redesign" },
+  { value: "website-maintenance", label: "Website Maintenance" },
+  { value: "web-applications", label: "Custom Web Applications" },
   { value: "other", label: "Other" },
 ];
 
@@ -46,8 +46,22 @@ type SubmitStatus = {
   message: string;
 };
 
-export default function ContactForm() {
-  const [formData, setFormData] = useState<ContactFormData>(INITIAL_STATE);
+type ContactFormProps = {
+  /**
+   * Pre-selects the Service field — used by the Service Detail page
+   * ([slug]/page.tsx) so arriving from /services/ecommerce-websites, for
+   * example, opens the form with "E-Commerce Websites" already selected.
+   * Must be one of SERVICE_OPTIONS' values (kept in sync with the contact
+   * API's SERVICE_VALUES enum). The visitor can still change it.
+   */
+  defaultService?: string;
+};
+
+export default function ContactForm({ defaultService = "" }: ContactFormProps) {
+  const [formData, setFormData] = useState<ContactFormData>({
+    ...INITIAL_STATE,
+    service: defaultService,
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<SubmitStatus | null>(null);
 
@@ -91,7 +105,7 @@ export default function ContactForm() {
       } else {
         setStatus({
           type: "error",
-          message: "Unable to send your message. Please try again.",
+          message: result.message || "Unable to send your message.",
         });
       }
     } catch {

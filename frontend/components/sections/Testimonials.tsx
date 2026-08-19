@@ -5,37 +5,51 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    image: "/images/testimonials/pf1.png",
-    name: "Dianne Russell",
-    role: "CEO",
-    company: "Velora",
-    review:
-      "Onto.digital delivered beyond our expectations. Their attention to detail and technical expertise is second to none.",
-  },
-  {
-    image: "/images/testimonials/pf2.png",
-    name: "Jacob Jones",
-    role: "CTO",
-    company: "Cloudix",
-    review:
-      "Professional, responsive and results-driven. They truly care about your success.",
-  },
-  {
-    image: "/images/testimonials/pf3.png",
-    name: "Courtney Henry",
+    image: "/images/testimonials/client-profile.png",
+    name: "MD Masood",
     role: "Founder",
-    company: "Nexlify",
+    company: "Hyd Appliance Service",
     review:
-      "A true creative partner. They turned our vague ideas into a product our users genuinely love.",
+      "Good work, team Onto Digital. You designed a responsive website for our appliance repair business and also provided an admin panel to easily manage and maintain the site. Really appreciate the support and work done by the team.",
   },
   {
-    image: "/images/testimonials/pf4.png",
-    name: "Wade Warren",
-    role: "Head of Product",
-    company: "Brightly",
+    image: "/images/testimonials/client-profile.png",
+    name: "Talha Abdullah",
+    role: "CEO",
+    company: "Taswa",
     review:
-      "Fast, reliable and thoughtful at every step. Our launch wouldn't have gone as smoothly without them.",
+     "Good work by Onto Digital. They understood our requirements and created a clean, professional website for our construction business.",
   },
+
+
+  {
+    image: "/images/testimonials/client-profile.png",
+    name: "Insta-R Team",
+    role: "Management",
+    company: "Insta-R",
+    review:
+      "Onto Digital has been very helpful in maintaining and updating our WordPress website. They respond quickly when we need changes and make sure everything is working properly. Good support and reliable service.",
+  },
+
+  {
+    image: "/images/testimonials/client-profile.png",
+    name: "Abdul Samad",
+    role: "Founder",
+    company: "Built4You",
+    review:
+     "Great work by the Onto Digital team. The website looks professional, responsive and clearly represents our construction business.",
+  },  
+
+  {
+    image: "/images/testimonials/client-profile.png",
+    name: "Imran",
+    role: "CEO & Engineer",
+    company: "Mi Town Builders",
+    review:
+      "Working with Onto Digital was a good experience. They understood our construction business and helped us present our projects and services properly online. The communication was easy and they were open to our changes.",
+  },
+
+  
 ];
 
 const CLONE_COUNT = 2;
@@ -77,7 +91,7 @@ export default function Testimonials() {
       <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-12 sm:px-8 sm:py-14 lg:flex-row lg:items-start lg:gap-12 lg:px-10 lg:py-14 xl:px-10">
 
         {/* Left Content */}
-        <div className="flex w-full max-w-[20rem] shrink-0 flex-col justify-start text-left">
+        <div className="flex w-full max-w-[20rem] shrink-0 flex-col justify-center   text-left">
           <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
             TESTIMONIALS
           </span>
@@ -121,9 +135,8 @@ export default function Testimonials() {
           <div className="overflow-hidden">
             <div
               onTransitionEnd={handleTransitionEnd}
-              className={`flex [--slide-width:100%] sm:[--slide-width:50%] ${
-                animate ? "transition-transform duration-500 ease-out" : ""
-              }`}
+              className={`flex [--slide-width:100%] sm:[--slide-width:50%] ${animate ? "transition-transform duration-500 ease-out" : ""
+                }`}
               style={{
                 transform: `translateX(calc(-${index} * var(--slide-width)))`,
               }}

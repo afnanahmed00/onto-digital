@@ -9,14 +9,14 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Keep in sync with SERVICE_OPTIONS in components/forms/ContactForm.tsx.
 const SERVICE_VALUES = [
-  "web-design",
-  "web-development",
-  "shopify",
-  "wordpress",
-  "ecommerce",
-  "ui-ux",
-  "branding",
-  "maintenance",
+  "business-websites",
+  "wordpress-websites",
+  "portfolio-websites",
+  "ecommerce-websites",
+  "landing-pages",
+  "website-redesign",
+  "website-maintenance",
+  "web-applications",
   "other",
 ] as const;
 
@@ -35,11 +35,15 @@ const contactSchema = z.object({
     .refine((value) => value === "" || EMAIL_REGEX.test(value), {
       message: "Please enter a valid email address.",
     }),
-  phone: z
-    .string()
-    .trim()
-    .min(1, "Please enter your phone number.")
-    .max(30, "Phone number is too long."),
+ phone: z
+  .string()
+  .trim()
+  .min(7, "Please enter a valid phone number.")
+  .max(30, "Phone number is too long.")
+  .regex(
+    /^\+?[0-9][0-9\s().-]{6,28}[0-9]$/,
+    "Please enter a valid phone number."
+  ),
   company: z
     .string()
     .trim()
