@@ -43,7 +43,7 @@ const values: { icon: LucideIcon; title: string; description: string }[] = [
 export default function OurValues() {
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
-      <div className="mx-auto max-w-[1440px] px-5 py-[50px] sm:px-8 lg:px-10 xl:px-10">
+      <div className="mx-auto max-w-[1440px] px-5 py-[50px] sm:px-8 sm:py-16 lg:px-10 lg:py-20 xl:px-10">
 
         <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
           OUR VALUES
@@ -55,7 +55,7 @@ export default function OurValues() {
           DRIVE EVERYTHING WE DO
         </h2>
 
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 lg:grid-cols-5 lg:gap-5">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-3 lg:grid-cols-5 lg:gap-5">
 
           {values.map(({ icon: Icon, title, description }) => (
 

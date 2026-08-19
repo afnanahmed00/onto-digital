@@ -42,7 +42,7 @@ export default function Services() {
     ];
     return (
         <section className="border-t border-[#1f1f1f] bg-black">
-            <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-12 sm:px-6 sm:py-14 lg:flex-row lg:gap-12 lg:px-10 lg:py-14 xl:px-16">
+            <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-12 sm:px-8 sm:py-14 lg:flex-row lg:gap-12 lg:px-10 lg:py-14 xl:px-10">
 
                 {/* Left Content */}
                 <div className="flex w-full max-w-[22rem] flex-col justify-center  text-left">
@@ -73,7 +73,7 @@ export default function Services() {
                 </div>
 
                 {/* Right Grid */}
-                <div className="grid flex-1 grid-cols-2 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:gap-5">
+                <div className="grid flex-1 grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 xl:gap-5">
   {services.map((service) => (
     <div
       key={service.title}

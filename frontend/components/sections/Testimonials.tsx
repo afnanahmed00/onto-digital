@@ -74,7 +74,7 @@ export default function Testimonials() {
 
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-12 sm:px-6 sm:py-14 lg:flex-row lg:items-start lg:gap-12 lg:px-10 lg:py-14 xl:px-16">
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-12 sm:px-8 sm:py-14 lg:flex-row lg:items-start lg:gap-12 lg:px-10 lg:py-14 xl:px-10">
 
         {/* Left Content */}
         <div className="flex w-full max-w-[20rem] shrink-0 flex-col justify-start text-left">

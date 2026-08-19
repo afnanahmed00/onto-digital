@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 export default function Header() {
   return (
     <header className="absolute top-0 left-0 z-50 w-full">
-      <div className="mx-auto flex h-20 w-full max-w-[1440px] items-center justify-between px-5 sm:px-6 lg:h-24 lg:px-10 xl:px-16">
+      <div className="mx-auto flex h-20 w-full max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:h-24 lg:px-10 xl:px-10">
         <Logo />
 
         <Button

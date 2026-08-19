@@ -28,7 +28,7 @@ export default function Work() {
 
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-10 sm:px-8 lg:gap-12 lg:px-10 lg:py-12 xl:px-16">
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-10 sm:px-8 sm:py-11 lg:gap-12 lg:px-10 lg:py-12 xl:px-10">
 
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start">
 
@@ -60,7 +60,7 @@ export default function Work() {
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="group overflow-hidden rounded-[22px] border border-[#2a2a2a] bg-[#050505] transition-all duration-500 hover:-translate-y-2 hover:border-[#51FF73]"
+                className="group overflow-hidden rounded-[20px] border border-[#2a2a2a] bg-[#050505] transition-all duration-500 hover:-translate-y-2 hover:border-[#51FF73]"
               >
                 {/* Image */}
                 <div className="overflow-hidden p-2 pb-0">

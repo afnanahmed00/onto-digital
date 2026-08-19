@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import ServicesHero from "@/components/sections/ServicesHero";
 import ServiceCollection from "@/components/sections/ServiceCollection";
 import TechStack from "@/components/sections/TechStack";
@@ -8,6 +9,27 @@ import { serviceProcess } from "@/data/serviceProcess";
 import FAQ from "@/components/sections/FAQ";
 import { serviceFaqs } from "@/data/serviceFaqs";
 import CTA from "@/components/sections/CTA";
+import { SITE } from "@/config/site";
+
+const description =
+  "Explore ONTO DIGITAL's services — web development, UI/UX design, web applications, e-commerce and branding built to scale your business.";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description,
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: `Services | ${SITE.name}`,
+    description,
+    url: "/services",
+  },
+  twitter: {
+    title: `Services | ${SITE.name}`,
+    description,
+  },
+};
 
 export default function ServicesPage() {
   return (

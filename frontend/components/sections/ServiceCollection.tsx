@@ -42,7 +42,7 @@ const services = [
 export default function ServiceCollection() {
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
-      <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16 xl:px-16">
+      <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16 xl:px-10">
 
         <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
           WHAT WE DO
@@ -61,7 +61,7 @@ export default function ServiceCollection() {
             return (
               <div
                 key={service.title}
-                className="group relative flex flex-col overflow-hidden rounded-[1.25rem] border border-[#262626] bg-[#050505] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#51FF73] hover:shadow-[0_0_30px_rgba(81,255,115,.15)] sm:p-7"
+                className="group relative flex flex-col overflow-hidden rounded-[1.25rem] border border-[#262626] bg-[#050505] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#51FF73] hover:shadow-[0_0_30px_rgba(81,255,115,.15)] sm:p-7 lg:p-8"
               >
                 {/* Top shine */}
                 <div className="pointer-events-none absolute left-1/2 top-0 h-16 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#51FF73]/25 opacity-70 blur-2xl transition-opacity duration-300 group-hover:opacity-100 sm:h-20 sm:w-32" />

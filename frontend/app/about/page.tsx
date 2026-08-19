@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AboutHero from "@/components/sections/AboutHero";
 import OurValues from "@/components/sections/OurValues";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
@@ -5,6 +6,27 @@ import CTA from "@/components/sections/CTA";
 import Process from "@/components/sections/Process";
 import { aboutFeatures } from "@/data/aboutFeatures";
 import { aboutProcess } from "@/data/aboutProcess";
+import { SITE } from "@/config/site";
+
+const description =
+  "Learn about ONTO DIGITAL — a premium digital agency combining strategy, creativity and technology to build digital experiences that drive real growth.";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description,
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: `About Us | ${SITE.name}`,
+    description,
+    url: "/about",
+  },
+  twitter: {
+    title: `About Us | ${SITE.name}`,
+    description,
+  },
+};
 
 export default function AboutPage() {
   return (

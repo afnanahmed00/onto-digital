@@ -129,7 +129,7 @@ export default function TechStack() {
 
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
-      <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16 xl:px-16">
+      <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16 xl:px-10">
 
         {/* Heading */}
         <div className="mx-auto flex max-w-[38rem] flex-col items-center text-center">
@@ -152,7 +152,7 @@ export default function TechStack() {
         </div>
 
         {/* Orbit */}
-        <div className="group relative mx-auto mt-14 h-[340px] w-[340px] sm:mt-16 sm:h-[460px] sm:w-[460px] lg:mt-20 lg:h-[620px] lg:w-[620px]">
+        <div className="group relative mx-auto mt-14 h-[min(340px,85vw)] w-[min(340px,85vw)] sm:mt-16 sm:h-[460px] sm:w-[460px] lg:mt-20 lg:h-[620px] lg:w-[620px]">
 
           {/* Ambient glow */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[40%] w-[40%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#51FF73]/10 blur-[60px]" />
@@ -164,7 +164,7 @@ export default function TechStack() {
           <div className="absolute inset-[15%] rounded-full border border-[#51FF73]/15" />
 
           {/* Rotating layer: nodes + path dots */}
-          <div className="animate-orbit-spin absolute inset-0 [--dot-radius:166px] [--radius:144px] group-hover:[animation-play-state:paused] sm:[--dot-radius:226px] sm:[--radius:198px] lg:[--dot-radius:306px] lg:[--radius:272px]">
+          <div className="animate-orbit-spin absolute inset-0 [--dot-radius:min(166px,41.5vw)] [--radius:min(144px,36vw)] group-hover:[animation-play-state:paused] sm:[--dot-radius:226px] sm:[--radius:198px] lg:[--dot-radius:306px] lg:[--radius:272px]">
 
             {/* Path dots */}
             {techStack.map((tech, i) => {

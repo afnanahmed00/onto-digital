@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/hero/Hero";
 import TrustedCompanies from "@/components/sections/TrustedCompanies";
 import Services from "@/components/sections/Services";
@@ -7,7 +8,24 @@ import Stats from "@/components/sections/Stats";
 import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
 import { homeProcess } from "@/data/homeProcess";
+import { SITE } from "@/config/site";
 
+export const metadata: Metadata = {
+  title: `${SITE.name} | ${SITE.tagline}`,
+  description: SITE.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: `${SITE.name} | ${SITE.tagline}`,
+    description: SITE.description,
+    url: "/",
+  },
+  twitter: {
+    title: `${SITE.name} | ${SITE.tagline}`,
+    description: SITE.description,
+  },
+};
 
 export default function HomePage() {
   return (

@@ -3,6 +3,8 @@ import { Orbitron } from "next/font/google";
 import "./globals.css";
 
 import Layout from "@/components/layout/Layout";
+import { SITE } from "@/config/site";
+import { SEO } from "@/config/seo";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -11,8 +13,29 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "ONTO DIGITAL",
-  description: "Premium Digital Agency",
+  metadataBase: new URL(SITE.website),
+  title: {
+    default: SEO.defaultTitle,
+    template: SEO.titleTemplate,
+  },
+  description: SEO.description,
+  keywords: SEO.keywords,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE.website,
+    siteName: SITE.name,
+    title: SEO.defaultTitle,
+    description: SEO.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO.defaultTitle,
+    description: SEO.description,
+  },
 };
 
 export default function RootLayout({

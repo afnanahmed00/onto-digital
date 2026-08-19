@@ -7,7 +7,7 @@ const SPOKES = Array.from({ length: 12 }, (_, i) => (i * 360) / 12);
 export default function CTA() {
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
-      <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14 xl:px-16">
+      <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14 xl:px-10">
         <div className="relative overflow-hidden rounded-[24px] border border-[#51FF73] bg-[#050505] shadow-[0_0_40px_-20px_rgba(81,255,115,0.22)]">
           <svg
             viewBox="0 0 1000 500"

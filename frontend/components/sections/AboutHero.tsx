@@ -27,7 +27,7 @@ const stats = [
 export default function AboutHero() {
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
-    <div className="mx-auto max-w-[1440px] px-5 pt-[60px] pb-[50px] sm:px-8 sm:pt-[90px] lg:px-10 lg:pt-[110px] xl:px-10">
+    <div className="mx-auto max-w-[1440px] px-5 pt-[60px] pb-[50px] sm:px-8 sm:pt-[90px] sm:pb-16 lg:px-10 lg:pt-[110px] lg:pb-20 xl:px-10">
 
         <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
 
@@ -39,7 +39,7 @@ export default function AboutHero() {
               ABOUT US
             </span>
 
-            <h1 className="mt-2 font-[var(--font-heading)] text-[2.15rem] font-medium uppercase leading-[1.08] sm:text-[2rem] lg:text-[3.15rem]">
+            <h1 className="mt-2 font-[var(--font-heading)] text-[2.15rem] font-medium uppercase leading-[1.08] lg:text-[3.15rem]">
               WE BUILD DIGITAL
               <br />
               SOLUTIONS THAT
@@ -82,7 +82,7 @@ export default function AboutHero() {
 
             {/* Image */}
 
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[22px] border border-[#2A2A2A] bg-[#050505]">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[20px] border border-[#2A2A2A] bg-[#050505]">
 
               <Image
                 src="/images/projects/p1.png"
@@ -96,7 +96,7 @@ export default function AboutHero() {
 
             {/* Stats */}
 
-            <div className="-mt-6 rounded-[22px] border border-[#2A2A2A] bg-[#050505] backdrop-blur-sm lg:mx-8">
+            <div className="-mt-6 rounded-[20px] border border-[#2A2A2A] bg-[#050505] backdrop-blur-sm lg:mx-8">
 
               <div className="grid grid-cols-4 divide-x divide-[#202020]">
 

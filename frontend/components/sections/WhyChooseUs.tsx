@@ -27,7 +27,7 @@ export default function WhyChooseUs({
 }: WhyChooseUsProps) {
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
-      <div className="mx-auto max-w-[1440px] px-5 pt-[50px] pb-[50px] sm:px-8 lg:px-10 xl:px-10">
+      <div className="mx-auto max-w-[1440px] px-5 pt-[50px] pb-[50px] sm:px-8 sm:pt-16 sm:pb-16 lg:px-10 lg:pt-20 lg:pb-20 xl:px-10">
 
         <div className="grid items-center gap-8 lg:grid-cols-[35%_65%]">
 
@@ -61,7 +61,7 @@ export default function WhyChooseUs({
 
           {/* Right */}
 
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 lg:gap-5">
 
             {cards.map(({ icon: Icon, title, description }) => (
 

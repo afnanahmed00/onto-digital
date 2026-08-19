@@ -59,7 +59,7 @@ export default function ProjectGallery() {
 
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
-      <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14 xl:px-16">
+      <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14 xl:px-10">
         {!isLoading && !hasError && projects && projects.length > 0 && (
           <ProjectFilters
             categories={categories}

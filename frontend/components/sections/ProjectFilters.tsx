@@ -35,7 +35,7 @@ export default function ProjectFilters({ categories, selected, onChange }: Proje
             aria-pressed={isActive}
             onClick={() => onChange(option)}
             className={clsx(
-              "shrink-0 whitespace-nowrap rounded-full border px-5 py-2.5 font-[var(--font-heading)] text-[0.72rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#51FF73] focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+              "shrink-0 whitespace-nowrap rounded-full border px-6 py-3 font-[var(--font-heading)] text-[0.72rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#51FF73] focus-visible:ring-offset-2 focus-visible:ring-offset-black",
               isActive
                 ? "border-[#51FF73] bg-[#51FF73] text-black"
                 : "border-[#262626] text-white hover:border-[#51FF73] hover:text-[#51FF73]"

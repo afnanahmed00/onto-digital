@@ -25,7 +25,7 @@ export default function FAQ({
 
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
-      <div className="mx-auto max-w-[1440px] px-5 py-[50px] sm:px-8 lg:px-10 xl:px-10">
+      <div className="mx-auto max-w-[1440px] px-5 py-[50px] sm:px-8 sm:py-16 lg:px-10 lg:py-20 xl:px-10">
 
         <div className="grid gap-10 lg:grid-cols-[38%_60%]">
 

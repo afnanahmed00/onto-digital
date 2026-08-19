@@ -27,7 +27,7 @@ function ContactInfoRow({ href, children }: { href?: string; children: ReactNode
 export default function ContactSection() {
   return (
     <section id="contact-form" className="border-t border-[#1f1f1f] bg-black">
-      <div className="mx-auto max-w-[1440px] px-5 pt-[50px] pb-[50px] sm:px-8 lg:px-10 xl:px-10">
+      <div className="mx-auto max-w-[1440px] px-5 pt-[50px] pb-[50px] sm:px-8 sm:pt-16 sm:pb-16 lg:px-10 lg:pt-20 lg:pb-20 xl:px-10">
         <div className="grid gap-6 lg:grid-cols-[60%_40%] lg:gap-8">
 
           {/* Send us a message */}

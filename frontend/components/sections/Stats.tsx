@@ -67,7 +67,7 @@ function StatCard({ icon: Icon, value, suffix, title, subtitle, index }: Stat & 
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-      className="group flex flex-col items-center rounded-[14px] border border-[#252525] bg-[#111111] px-4 py-6 text-center shadow-[0_12px_40px_rgba(0,0,0,.45)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#52FF2A] hover:shadow-[0_0_30px_rgba(57,255,20,.22)] sm:rounded-[18px] sm:px-8 sm:py-8"
+      className="group flex flex-col items-center rounded-[16px] border border-[#252525] bg-[#111111] px-4 py-6 text-center shadow-[0_12px_40px_rgba(0,0,0,.45)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#52FF2A] hover:shadow-[0_0_30px_rgba(57,255,20,.22)] sm:rounded-[20px] sm:px-8 sm:py-8"
     >
       <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#252525] bg-[#171717] text-[#39FF14] transition-all duration-300 group-hover:border-[#52FF2A] group-hover:text-[#52FF2A] group-hover:shadow-[0_0_30px_rgba(125,255,87,.25)] sm:h-16 sm:w-16">
         <Icon size={22} strokeWidth={1.75} className="sm:hidden" />
@@ -91,7 +91,7 @@ function StatCard({ icon: Icon, value, suffix, title, subtitle, index }: Stat & 
 export default function Stats() {
   return (
     <section className="border-t border-[#252525] bg-[#050505]">
-      <div className="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 lg:px-10 lg:py-20 xl:px-16">
+      <div className="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20 xl:px-10">
         <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
           {stats.map((item, index) => (
             <StatCard key={item.title} {...item} index={index} />
