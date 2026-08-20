@@ -19,9 +19,17 @@ const SIZE_SPAN_CLASSES: Record<Project["size"], string> = {
 
 interface ProjectCardProps {
   project: Project;
+  /**
+   * Bumps up text/icon/padding sizes a step — for contexts that render this
+   * same card larger than the /projects gallery's default 3-up grid (e.g.
+   * the homepage's 2-up preview strip in Work.tsx), so the type doesn't
+   * look undersized relative to the bigger card. Gallery usage is
+   * unaffected — this defaults to false/original sizing.
+   */
+  large?: boolean;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, large = false }: ProjectCardProps) {
   return (
     <a
       href={project.websiteUrl}
@@ -58,37 +66,85 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Default state — image, name, category, arrow. Stays visible on mobile since hover doesn't exist there.
           Padding/text sizes step up with the card: mobile rows are only 150px tall, so they stay compact. */}
-      <div className="relative z-10 mt-auto flex items-end justify-between gap-2 p-3 opacity-100 transition-opacity duration-300 group-hover:opacity-0 group-focus-visible:opacity-0 sm:gap-3 sm:p-4 lg:p-5">
+      <div
+        className={clsx(
+          "relative z-10 mt-auto flex items-end justify-between gap-2 p-3 opacity-100 transition-opacity duration-300 group-hover:opacity-0 group-focus-visible:opacity-0 sm:gap-3 sm:p-4 lg:p-5",
+          large && "sm:p-5 lg:p-6"
+        )}
+      >
         <div className="min-w-0">
-          <span className="block truncate font-[var(--font-heading)] text-[0.6rem] font-medium uppercase tracking-[0.12em] text-[#51FF73] sm:text-[0.65rem] sm:tracking-[0.14em] lg:text-[0.68rem]">
+          <span
+            className={clsx(
+              "block truncate font-[var(--font-heading)] font-medium uppercase tracking-[0.12em] text-[#51FF73]",
+              large
+                ? "text-[0.7rem] sm:text-[0.78rem] sm:tracking-[0.14em] lg:text-[0.85rem]"
+                : "text-[0.6rem] sm:text-[0.65rem] sm:tracking-[0.14em] lg:text-[0.68rem]"
+            )}
+          >
             {project.category}
           </span>
-          <span className="mt-1 block truncate font-[var(--font-heading)] text-[0.85rem] font-medium uppercase text-white sm:text-[0.95rem] lg:text-[1.05rem]">
+          <span
+            className={clsx(
+              "mt-1 block truncate font-[var(--font-heading)] font-medium uppercase text-white",
+              large
+                ? "text-[1rem] sm:text-[1.15rem] lg:text-[1.3rem]"
+                : "text-[0.85rem] sm:text-[0.95rem] lg:text-[1.05rem]"
+            )}
+          >
             {project.name}
           </span>
         </div>
 
-        <ArrowUpRight size={16} className="shrink-0 text-[#51FF73] sm:h-[18px] sm:w-[18px]" aria-hidden="true" />
+        <ArrowUpRight
+          size={large ? 20 : 16}
+          className={clsx("shrink-0 text-[#51FF73]", large ? "sm:h-[24px] sm:w-[24px]" : "sm:h-[18px] sm:w-[18px]")}
+          aria-hidden="true"
+        />
       </div>
 
       {/* Hover state (desktop) / keyboard-focus state — category, name, description, CTA */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-end p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-        <span className="inline-flex w-fit items-center rounded-md bg-[#51FF73]/15 px-2.5 py-1 text-[0.65rem] font-medium uppercase tracking-[0.1em] text-[#51FF73]">
+      <div
+        className={clsx(
+          "absolute inset-0 z-10 flex flex-col justify-end p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100",
+          large && "p-6 lg:p-7"
+        )}
+      >
+        <span
+          className={clsx(
+            "inline-flex w-fit items-center rounded-md bg-[#51FF73]/15 font-medium uppercase tracking-[0.1em] text-[#51FF73]",
+            large ? "px-3 py-1.5 text-[0.75rem]" : "px-2.5 py-1 text-[0.65rem]"
+          )}
+        >
           {project.category}
         </span>
 
-        <span className="mt-3 font-[var(--font-heading)] text-[1.15rem] font-semibold uppercase text-white">
+        <span
+          className={clsx(
+            "mt-3 font-[var(--font-heading)] font-semibold uppercase text-white",
+            large ? "text-[1.4rem] lg:text-[1.6rem]" : "text-[1.15rem]"
+          )}
+        >
           {project.name}
         </span>
 
-        <p className="mt-2 line-clamp-2 text-[0.82rem] leading-[1.6] text-[#A7A7A7]">
+        <p
+          className={clsx(
+            "mt-2 line-clamp-2 leading-[1.6] text-[#A7A7A7]",
+            large ? "text-[0.95rem] lg:text-[1rem]" : "text-[0.82rem]"
+          )}
+        >
           {project.description}
         </p>
 
-        <span className="mt-4 inline-flex items-center gap-2 font-[var(--font-heading)] text-[0.72rem] font-medium uppercase tracking-[0.1em] text-[#51FF73]">
+        <span
+          className={clsx(
+            "mt-4 inline-flex items-center gap-2 font-[var(--font-heading)] font-medium uppercase tracking-[0.1em] text-[#51FF73]",
+            large ? "text-[0.85rem]" : "text-[0.72rem]"
+          )}
+        >
           VIEW PROJECT
           <ExternalLink
-            size={14}
+            size={large ? 16 : 14}
             className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           />
         </span>

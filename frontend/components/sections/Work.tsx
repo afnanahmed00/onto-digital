@@ -1,30 +1,26 @@
-import Image from "next/image";
 import Link from "next/link";
+import ProjectCard from "@/components/sections/ProjectCard";
+import { getProjects } from "@/services/projects";
 
-export default function Work() {
-  const projects = [
-    {
-      image: "/images/projects/p1.png",
-      title: "Fintech Platform",
-      category: "WEB APPLICATION",
-      description:
-        "Secure platform for seamless fintech management.",
-    },
-    {
-      image: "/images/projects/p2.png",
-      title: "E-Commerce Redesign",
-      category: "E-COMMERCE",
-      description:
-        "Modern eCommerce experience that increased conversions.",
-    },
-    {
-      image: "/images/projects/p3.png",
-      title: "SaaS Dashboard",
-      category: "WEB APPLICATION",
-      description:
-        "Analytics dashboard with real-time insights and reporting.",
-    },
-  ];
+// How many projects this homepage preview shows — always the first N from
+// the admin-managed project list (already sorted by displayOrder), so
+// reordering/adding/removing a project in Admin → Projects is reflected
+// here automatically, same as the full gallery at /projects. Laid out 2
+// per row (see the grid below), so this is also always an even number.
+const PREVIEW_COUNT = 4;
+
+export default async function Work() {
+  let projects: Awaited<ReturnType<typeof getProjects>> = [];
+
+  try {
+    projects = (await getProjects()).slice(0, PREVIEW_COUNT);
+  } catch {
+    // Home page keeps rendering without this section on a backend outage —
+    // ProjectGallery on /projects carries the fuller error state for this
+    // same data (see Services.tsx for the same convention).
+  }
+
+  if (projects.length === 0) return null;
 
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
@@ -54,48 +50,17 @@ export default function Work() {
 
           </div>
 
-          {/* Project Cards */}
-          <div className="grid flex-1 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* Project Cards — same ProjectCard used on /projects, always 2 per
+              row here (the bento "large" span is deliberately not used;
+              that's for the fuller gallery, not this fixed strip). Cards
+              are bigger than the gallery's 3-up grid, so `large` bumps the
+              card's text/icon sizes up to match. */}
+          <div className="grid flex-1 grid-cols-1 gap-6 sm:grid-cols-2">
 
             {projects.map((project) => (
-              <article
-                key={project.title}
-                className="group overflow-hidden rounded-[20px] border border-[#2a2a2a] bg-[#050505] transition-all duration-500 hover:-translate-y-2 hover:border-[#51FF73]"
-              >
-                {/* Image */}
-                <div className="overflow-hidden p-2 pb-0">
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="flex flex-col p-6">
-
-                  <h3 className="font-[var(--font-heading)] text-[1.3rem] font-medium  uppercase text-white">
-                    {project.title}
-                  </h3>
-
-                  <span className="mt-4 text-[0.78rem] uppercase tracking-[0.08em] text-[#A0A0A0]">
-                    {project.category}
-                  </span>
-
-                  <div className="mt-6 flex justify-end">
-
-                    <button className="flex h-12 w-12 items-center justify-center rounded-2xl  text-[1.8rem] text-[#51FF73] transition-all duration-300 hover:bg-[#51FF73] hover:text-black">
-                      ↗
-                    </button>
-
-                  </div>
-
-                </div>
-              </article>
+              <div key={project.id} className="relative aspect-[16/11]">
+                <ProjectCard project={{ ...project, size: "medium" }} large />
+              </div>
             ))}
 
           </div>

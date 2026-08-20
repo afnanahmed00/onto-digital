@@ -11,6 +11,8 @@ type SharedProps = {
   placeholder?: string;
   autoComplete?: string;
   required?: boolean;
+  /** Marks the field as failing validation — draws the border in the alert color. */
+  invalid?: boolean;
   value: string;
   onChange: (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -19,7 +21,7 @@ type SharedProps = {
 
 type InputFieldProps = SharedProps & {
   as?: "input";
-  type?: "text" | "email" | "tel" | "number";
+  type?: "text" | "email" | "tel" | "number" | "password";
 };
 
 type TextareaFieldProps = SharedProps & {
@@ -37,14 +39,25 @@ type FormFieldProps = InputFieldProps | TextareaFieldProps | SelectFieldProps;
 // Normal body copy (sans-serif) — kept separate from the site's display/heading
 // font so form input, placeholder and typed text never render in it.
 const fieldStyles =
-  "w-full rounded-xl border border-[#262626] bg-[#0A0A0A] font-sans text-[0.9rem] text-white placeholder:text-[#6B6B6B] transition-colors duration-300 hover:border-[#51FF73] focus:border-[#51FF73] focus:outline-none";
+  "w-full rounded-xl border bg-[#0A0A0A] font-sans text-[0.9rem] text-white placeholder:text-[#6B6B6B] transition-colors duration-300 hover:border-[#51FF73] focus:border-[#51FF73] focus:outline-none";
 
 /** Shared input/textarea/select used across the contact form — label stays accessible even though only the icon + placeholder are shown. */
 export default function FormField(props: FormFieldProps) {
-  const { id, name, label, icon: Icon, placeholder, autoComplete, required, value, onChange } =
-    props;
+  const {
+    id,
+    name,
+    label,
+    icon: Icon,
+    placeholder,
+    autoComplete,
+    required,
+    invalid,
+    value,
+    onChange,
+  } = props;
   const isTextarea = props.as === "textarea";
   const isSelect = props.as === "select";
+  const borderStyles = invalid ? "border-[#FF5C5C]" : "border-[#262626]";
 
   return (
     <div className="flex flex-col">
@@ -73,7 +86,7 @@ export default function FormField(props: FormFieldProps) {
             rows={(props as TextareaFieldProps).rows ?? 5}
             value={value}
             onChange={onChange}
-            className={clsx(fieldStyles, "min-h-[140px] resize-none py-4 pl-11 pr-4 leading-[1.7]")}
+            className={clsx(fieldStyles, borderStyles, "min-h-[140px] resize-none py-4 pl-11 pr-4 leading-[1.7]")}
           />
         ) : isSelect ? (
           <>
@@ -85,6 +98,7 @@ export default function FormField(props: FormFieldProps) {
               onChange={onChange}
               className={clsx(
                 fieldStyles,
+                borderStyles,
                 "h-[52px] appearance-none pl-11 pr-10",
                 value ? "text-white" : "text-[#6B6B6B]"
               )}
@@ -116,7 +130,7 @@ export default function FormField(props: FormFieldProps) {
             required={required}
             value={value}
             onChange={onChange}
-            className={clsx(fieldStyles, "h-[52px] pl-11 pr-4")}
+            className={clsx(fieldStyles, borderStyles, "h-[52px] pl-11 pr-4")}
           />
         )}
       </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServiceDetail from "@/components/sections/ServiceDetail";
-import { getServiceBySlug, services } from "@/data/services";
+import { getServiceBySlug } from "@/services/services";
 import { SITE } from "@/config/site";
 import Process from "@/components/sections/Process";
 import { serviceProcess } from "@/data/serviceProcess";
@@ -10,17 +10,15 @@ type ServicePageProps = {
   params: Promise<{ slug: string }>;
 };
 
-// Pre-renders /services/business-websites, /services/web-applications, etc.
-// Adding a service only requires a new entry in data/services.ts.
-export function generateStaticParams() {
-  return services.map((service) => ({ slug: service.slug }));
-}
-
+// No generateStaticParams: services are looked up by slug from MongoDB on
+// request (cached for 60s per getServiceBySlug's `next.revalidate`), so a
+// service an admin adds or renames shows up under /services/{slug} without
+// a redeploy — see services/services.ts.
 export async function generateMetadata({
   params,
 }: ServicePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const service = await getServiceBySlug(slug);
 
   if (!service) {
     return { title: "Service Not Found" };
@@ -46,9 +44,10 @@ export async function generateMetadata({
 
 export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const service = await getServiceBySlug(slug);
 
-  // Unknown slug (e.g. /services/foo) falls back to the existing app/not-found.tsx.
+  // Unknown slug, or an unpublished service (the backend 404s both cases
+  // identically for anonymous callers), falls back to app/not-found.tsx.
   if (!service) {
     notFound();
   }

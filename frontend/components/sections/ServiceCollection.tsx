@@ -1,8 +1,17 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { services } from "@/data/services";
+import { getServices } from "@/services/services";
 
-export default function ServiceCollection() {
+export default async function ServiceCollection() {
+  let services: Awaited<ReturnType<typeof getServices>> = [];
+  let hasError = false;
+
+  try {
+    services = await getServices();
+  } catch {
+    hasError = true;
+  }
+
   return (
     <section className="border-t border-[#1f1f1f] bg-black">
       <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16 xl:px-10">
@@ -17,6 +26,14 @@ export default function ServiceCollection() {
           ELEVATE YOUR BUSINESS
         </h2>
 
+        {hasError ? (
+          <StatusMessage
+            title="Unable to load services."
+            description="Please refresh the page or try again shortly."
+          />
+        ) : services.length === 0 ? (
+          <StatusMessage title="No services yet" description="New services are coming soon." />
+        ) : (
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
@@ -55,8 +72,20 @@ export default function ServiceCollection() {
             );
           })}
         </div>
+        )}
 
       </div>
     </section>
+  );
+}
+
+function StatusMessage({ title, description }: { title: string; description: string }) {
+  return (
+    <div className="mt-10 flex flex-col items-center justify-center gap-2 rounded-[20px] border border-[#262626] bg-[#050505] px-6 py-20 text-center sm:mt-12">
+      <p className="font-[var(--font-heading)] text-[1rem] font-medium uppercase tracking-[0.08em] text-white">
+        {title}
+      </p>
+      <p className="text-[0.85rem] text-[#A7A7A7]">{description}</p>
+    </div>
   );
 }

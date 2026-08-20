@@ -37,11 +37,15 @@ import {
 } from "lucide-react";
 
 /**
- * Central service data source for the Service Detail page
- * (app/services/[slug]/page.tsx) and the ServiceCollection cards on the
- * Services page. Everything the detail page renders is driven from here so
- * new services can be added — or this array later swapped for an API/DB
- * call — without touching any component markup.
+ * SUPERSEDED (Phase 11): the public site no longer reads `services` below —
+ * MongoDB, via services/services.ts's getServices()/getServiceBySlug(), is
+ * now the source of truth for the 8 services (see the admin dashboard's
+ * Services screen). This file is kept only for its `Service`/
+ * `ServiceFeature` types (still imported by ServiceDetail.tsx and
+ * services/services.ts) and as a reference for the original content that
+ * was imported into MongoDB — not deleted outright per the migration plan,
+ * in case a rollback is ever needed. Do not reintroduce imports of the
+ * `services` array or `getServiceBySlug` below into the public render path.
  */
 
 export type ServiceFeature = {

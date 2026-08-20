@@ -1,17 +1,18 @@
 import type { Project } from "@/types/project";
 
 /**
- * Local seed data for the Projects gallery.
+ * SUPERSEDED (Phase 11): services/projects.ts's getProjects() no longer
+ * reads this array — MongoDB, via the backend's public /api/v1/projects
+ * route, is now the source of truth (see the admin dashboard's Projects
+ * screen, and backend/src/scripts/seedProjects.ts for the one-time import
+ * these same 9 projects were copied into). Kept only as a reference for the
+ * original content and as a rollback fallback — not deleted outright per
+ * the migration plan. Do not reintroduce an import of `projects` below into
+ * the public render path.
  *
- * This stands in for a future admin-managed source (database + API). It is
- * only ever consumed through services/projects.ts — nothing outside that
- * file should import this array directly, so swapping it for a real API
- * later is a one-file change. See services/projects.ts for the swap point.
- *
- * NOTE: images currently cycle through the three placeholder screenshots
- * in public/images/projects (p1–p3) since real project photography hasn't
- * been supplied yet. Replace each `image` path once real assets exist —
- * the gallery re-renders from data, no component changes needed.
+ * NOTE: images cycled through the three placeholder screenshots in
+ * public/images/projects (p1–p3) since real project photography hadn't
+ * been supplied yet — still true of the seeded MongoDB rows.
  */
 export const projects: Project[] = [
   {

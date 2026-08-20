@@ -1,9 +1,19 @@
 import { Resend } from "resend";
 import { z } from "zod";
+import { apiUrl } from "@/config/api";
 
 // RESEND_API_KEY is read server-side only (Route Handlers never run in the
 // browser bundle). It must never be prefixed with NEXT_PUBLIC_.
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Where the "New Project Inquiry" admin notification is sent. Configurable
+// via env (CONTACT_NOTIFICATION_EMAIL, server-side only — no NEXT_PUBLIC_
+// prefix) so the recipient can change without a code deploy, but defaults to
+// the current ONTO DIGITAL inbox so nothing breaks if it's left unset. This
+// is deliberately a plain Gmail address, not a @ontodigital.in one: the
+// domain hasn't been purchased/verified with Resend yet.
+const ADMIN_NOTIFICATION_EMAIL =
+  process.env.CONTACT_NOTIFICATION_EMAIL?.trim() || "ontodigital.in@gmail.com";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -35,13 +45,15 @@ const contactSchema = z.object({
     .refine((value) => value === "" || EMAIL_REGEX.test(value), {
       message: "Please enter a valid email address.",
     }),
+ // The client always sends a full international number (e.g.
+ // "+917036431874") composed from a country-code selector + local number,
+ // so this enforces E.164: a leading "+", then 8-15 digits total.
  phone: z
   .string()
   .trim()
-  .min(7, "Please enter a valid phone number.")
-  .max(30, "Phone number is too long.")
+  .max(20, "Phone number is too long.")
   .regex(
-    /^\+?[0-9][0-9\s().-]{6,28}[0-9]$/,
+    /^\+[1-9]\d{7,14}$/,
     "Please enter a valid phone number."
   ),
   company: z
@@ -119,6 +131,52 @@ function escapeHtml(value: string): string {
 
 const GENERIC_ERROR_MESSAGE = "Something went wrong. Please try again.";
 
+// --- Lead persistence (MongoDB, via the backend) ---------------------------
+// The browser never talks to MongoDB or the backend directly — this route
+// handler (server-side only) calls the backend's public, unauthenticated
+// POST /api/v1/contact endpoint (see backend/src/routes/v1/contact.routes.ts)
+// server-to-server. That endpoint can only create a lead: it can't read,
+// update, or delete existing leads, and it's entirely separate from the
+// admin-only /api/v1/leads routes. Duplicate-guard logic (matching
+// email+phone within a short window) lives entirely in that endpoint — this
+// route never needs its own duplicate check.
+//
+// Persistence is the source of truth for whether the visitor's enquiry was
+// actually received: the POST handler below only reports success once this
+// resolves true, and only sends the admin/client emails after that. A
+// database or backend outage is logged server-side here and surfaced to the
+// caller as `false` — it must never be reported to the browser as a
+// successful submission.
+type LeadPayload = {
+  fullName: string;
+  email: string;
+  phone: string;
+  company: string;
+  service: string;
+  budget: string;
+  projectDetails: string;
+};
+
+async function createLead(data: LeadPayload): Promise<boolean> {
+  try {
+    const res = await fetch(apiUrl("/api/v1/contact"), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) {
+      console.error("Lead persistence failed:", res.status);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error("Lead persistence error:", error);
+    return false;
+  }
+}
+
 export async function POST(request: Request) {
   const contentType = request.headers.get("content-type") ?? "";
   if (!contentType.toLowerCase().includes("application/json")) {
@@ -163,10 +221,39 @@ export async function POST(request: Request) {
   const { fullName, email, phone, company, service, budget, projectDetails } =
     parsed.data;
 
+  // Persist to MongoDB as a Lead first. This is the gate for everything
+  // else: the visitor is only ever told the enquiry was received once it is
+  // actually sitting in the database (and therefore visible in Admin →
+  // Leads). If persistence fails, stop here — no emails are sent, and the
+  // browser gets a generic error with no MongoDB/internal detail.
+  const leadPersisted = await createLead({
+    fullName,
+    email,
+    phone,
+    company,
+    service,
+    budget,
+    projectDetails,
+  });
+
+  if (!leadPersisted) {
+    return Response.json(
+      { success: false, message: GENERIC_ERROR_MESSAGE },
+      { status: 500 }
+    );
+  }
+
+  // From here on the lead is safely stored, so the response to the visitor
+  // is success regardless of what happens with either email below — losing
+  // a notification email must never delete/roll back the Lead, and must
+  // never turn an already-successful submission into a reported failure.
+  // Each send is isolated in its own try/catch purely for server-side
+  // diagnostics; failures are logged (without leaking Resend internals to
+  // the browser) and otherwise swallowed.
   try {
     const { error } = await resend.emails.send({
       from: "ONTO DIGITAL <onboarding@resend.dev>",
-      to: ["ontodigital.in@gmail.com"],
+      to: [ADMIN_NOTIFICATION_EMAIL],
       subject: `New Project Inquiry — ${escapeHtml(fullName)}`,
       html: `
         <h2>New Project Inquiry</h2>
@@ -202,18 +289,16 @@ export async function POST(request: Request) {
     });
 
     if (error) {
-      console.error("Resend error:", error.message);
-
-      return Response.json(
-        { success: false, message: "Unable to send your message." },
-        { status: 500 }
-      );
+      console.error("Resend admin notification error:", error.message);
     }
+  } catch (error) {
+    console.error("Resend admin notification error:", error);
+  }
 
-    // Client auto-reply — best effort only. The admin notification above has
-    // already been sent, so a failure here must not turn the request into a
-    // failure response; it just means the client doesn't get a confirmation.
-    if (email) {
+  // Client auto-reply — also best effort only, and only when an email was
+  // provided.
+  if (email) {
+    try {
       const { error: clientError } = await resend.emails.send({
         from: "ONTO DIGITAL <onboarding@resend.dev>",
         to: [email],
@@ -223,9 +308,9 @@ export async function POST(request: Request) {
 
           <p>Thank you for reaching out to ONTO DIGITAL.</p>
 
-          <p>We've received your project inquiry and will review it shortly.</p>
+          <p>We've received your project inquiry and our team will review it.</p>
 
-          <p>Our team will get back to you as soon as possible.</p>
+          <p>We'll get back to you as soon as we can.</p>
 
           <p>Regards,<br />ONTO DIGITAL</p>
         `,
@@ -234,18 +319,13 @@ export async function POST(request: Request) {
       if (clientError) {
         console.error("Resend client auto-reply error:", clientError.message);
       }
+    } catch (error) {
+      console.error("Resend client auto-reply error:", error);
     }
-
-    return Response.json({
-      success: true,
-      message: "Your message has been sent successfully.",
-    });
-  } catch (error) {
-    console.error("Contact API error:", error);
-
-    return Response.json(
-      { success: false, message: GENERIC_ERROR_MESSAGE },
-      { status: 500 }
-    );
   }
+
+  return Response.json({
+    success: true,
+    message: "Your message has been sent successfully.",
+  });
 }

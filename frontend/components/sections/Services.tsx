@@ -1,7 +1,24 @@
 import Link from "next/link";
-import { services } from "@/data/services";
+import { getServices } from "@/services/services";
 
-export default function Services() {
+// This homepage preview only ever shows the first N (by displayOrder) —
+// the full list lives at /services (ServiceCollection.tsx), which is
+// unaffected by this cap.
+const PREVIEW_COUNT = 6;
+
+export default async function Services() {
+    let services: Awaited<ReturnType<typeof getServices>> = [];
+
+    try {
+        services = (await getServices()).slice(0, PREVIEW_COUNT);
+    } catch {
+        // Home page keeps rendering without the services grid on a backend
+        // outage — ServiceCollection on /services carries the fuller error
+        // state for this same data.
+    }
+
+    if (services.length === 0) return null;
+
     return (
         <section className="border-t border-[#1f1f1f] bg-black">
             <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-12 sm:px-8 sm:py-14 lg:flex-row lg:gap-12 lg:px-10 lg:py-14 xl:px-10">

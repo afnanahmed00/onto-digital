@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    image: "/images/testimonials/client-profile.png",
+    image: "/images/testimonials/image.png",
     name: "MD Masood",
     role: "Founder",
     company: "Hyd Appliance Service",
@@ -13,7 +13,7 @@ const testimonials = [
       "Good work, team Onto Digital. You designed a responsive website for our appliance repair business and also provided an admin panel to easily manage and maintain the site. Really appreciate the support and work done by the team.",
   },
   {
-    image: "/images/testimonials/client-profile.png",
+    image: "/images/testimonials/image.png",
     name: "Talha Abdullah",
     role: "CEO",
     company: "Taswa",
@@ -23,7 +23,7 @@ const testimonials = [
 
 
   {
-    image: "/images/testimonials/client-profile.png",
+    image: "/images/testimonials/image.png",
     name: "Insta-R Team",
     role: "Management",
     company: "Insta-R",
@@ -32,7 +32,7 @@ const testimonials = [
   },
 
   {
-    image: "/images/testimonials/client-profile.png",
+    image: "/images/testimonials/image.png",
     name: "Abdul Samad",
     role: "Founder",
     company: "Built4You",
@@ -41,7 +41,7 @@ const testimonials = [
   },  
 
   {
-    image: "/images/testimonials/client-profile.png",
+    image: "/images/testimonials/image.png",
     name: "Imran",
     role: "CEO & Engineer",
     company: "Mi Town Builders",
