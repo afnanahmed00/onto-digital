@@ -1,6 +1,6 @@
 /**
- * Base URL of the ONTO DIGITAL backend API (Express, deployed separately —
- * see backend/README.md: frontend → Vercel, backend → Render). Never
+ * Base URL of the ONTO DIGITAL backend API (Express, deployed separately:
+ * frontend → Vercel, backend → Render). Never
  * hardcode a production URL here: set NEXT_PUBLIC_API_URL in each
  * environment's config (Vercel project settings in production, .env.local
  * locally) and this picks it up automatically. Falls back to the local dev

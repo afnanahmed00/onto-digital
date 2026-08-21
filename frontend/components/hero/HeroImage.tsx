@@ -9,7 +9,7 @@ export default function HeroImage({ variant = "desktop" }: HeroImageProps) {
     return (
       <div className="flex h-full w-full items-center justify-center overflow-hidden">
         <Image
-          src="/images/hero/earth.png"
+          src="/images/home/earth.png"
           alt=""
           width={1000}
           height={1000}
@@ -32,7 +32,7 @@ export default function HeroImage({ variant = "desktop" }: HeroImageProps) {
   return (
     <div className="relative flex justify-end w-full">
       <Image
-        src="/images/hero/earth.png"
+        src="/images/home/earth.png"
         alt="Earth"
         width={860}
         height={860}
