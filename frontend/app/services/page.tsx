@@ -11,6 +11,13 @@ import { serviceFaqs } from "@/data/serviceFaqs";
 import CTA from "@/components/sections/CTA";
 import { SITE } from "@/config/site";
 
+// ServiceCollection fetches from the Render backend on every render (see
+// services/services.ts) — force-dynamic keeps that fetch off the Vercel
+// build (which has no live backend to hit) and defers it to request time
+// instead, the same way ProjectGallery already does client-side for
+// /projects.
+export const dynamic = "force-dynamic";
+
 const description =
   "Explore ONTO DIGITAL's services — web development, UI/UX design, web applications, e-commerce and branding built to scale your business.";
 
