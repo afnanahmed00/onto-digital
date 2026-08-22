@@ -152,7 +152,11 @@ export default function TechStack() {
         </div>
 
         {/* Orbit */}
-        <div className="group relative mx-auto mt-14 h-[min(340px,85vw)] w-[min(340px,85vw)] sm:mt-16 sm:h-[460px] sm:w-[460px] lg:mt-20 lg:h-[620px] lg:w-[620px]">
+        {/* overflow-hidden clips the rotating square below (animate-orbit-spin) to this
+            box: a rotated square's bounding box is up to sqrt(2)x wider than its own side,
+            which pushed past the viewport on mobile even though every visible node/dot
+            stays within --radius, well inside these bounds. */}
+        <div className="group relative mx-auto mt-14 h-[min(340px,85vw)] w-[min(340px,85vw)] overflow-hidden sm:mt-16 sm:h-[460px] sm:w-[460px] lg:mt-20 lg:h-[620px] lg:w-[620px]">
 
           {/* Ambient glow */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[40%] w-[40%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#51FF73]/10 blur-[60px]" />
