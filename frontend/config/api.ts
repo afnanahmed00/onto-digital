@@ -7,9 +7,14 @@
  * API so `npm run dev` works out of the box against `cd backend && npm run
  * dev` without any setup.
  *
- * Must be NEXT_PUBLIC_* (not a server-only var) — every call site is a
- * browser fetch (services/adminAuth.ts), since the httpOnly admin cookie
- * has to be set directly by the backend's own origin.
+ * Only for server-side callers (services/projects.ts, services/services.ts,
+ * app/api/contact/route.ts) that talk to the backend directly. Browser-side
+ * admin calls (services/adminAuth.ts, adminApi.ts, adminUploads.ts)
+ * deliberately do NOT use this — they call same-origin relative paths that
+ * next.config.ts rewrites to this same URL server-side, so the session
+ * cookie is set as first-party rather than cross-site. See next.config.ts
+ * for why: a cross-site cookie here gets silently dropped by mobile
+ * browsers' third-party cookie blocking.
  */
 export const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000").replace(
   /\/+$/,

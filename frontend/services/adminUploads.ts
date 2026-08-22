@@ -1,4 +1,3 @@
-import { apiUrl } from "@/config/api";
 import { adminApiFetch, type ApiResult } from "./adminApi";
 
 export type UploadedImage = {
@@ -28,7 +27,7 @@ export async function uploadProjectImage(file: File): Promise<UploadResult> {
   formData.append("folder", "projects");
 
   try {
-    const res = await fetch(apiUrl("/api/v1/uploads"), {
+    const res = await fetch("/api/v1/uploads", {
       method: "POST",
       credentials: "include",
       body: formData,

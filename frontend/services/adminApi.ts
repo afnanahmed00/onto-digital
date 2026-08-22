@@ -1,5 +1,3 @@
-import { apiUrl } from "@/config/api";
-
 export type ApiResult<T> =
   | { success: true; data: T }
   | { success: false; message: string; status: number };
@@ -15,9 +13,11 @@ function extractMessage(body: unknown, fallback: string): string {
 /**
  * Shared fetch wrapper for JSON admin API calls (projects/services/leads —
  * anything that isn't the multipart upload endpoint, see
- * services/adminUploads.ts). Always `credentials: "include"` so the
- * browser sends the backend's httpOnly session cookie (see
- * services/adminAuth.ts for why); never reads or stores the token itself.
+ * services/adminUploads.ts). `path` is a same-origin relative path
+ * (`/api/v1/...`), rewritten to the real backend by next.config.ts — see
+ * services/adminAuth.ts for why this isn't a direct cross-origin call.
+ * Always `credentials: "include"` so the browser sends the backend's
+ * httpOnly session cookie; never reads or stores the token itself.
  *
  * `status` is included on failure so callers can special-case a 401 —
  * expired/invalid session — by calling AdminAuthContext's `refresh()`,
@@ -27,7 +27,7 @@ function extractMessage(body: unknown, fallback: string): string {
  */
 export async function adminApiFetch<T>(path: string, init: RequestInit = {}): Promise<ApiResult<T>> {
   try {
-    const res = await fetch(apiUrl(path), {
+    const res = await fetch(path, {
       ...init,
       credentials: "include",
       headers: {

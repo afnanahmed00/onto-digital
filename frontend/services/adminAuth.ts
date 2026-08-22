@@ -1,14 +1,16 @@
-import { apiUrl } from "@/config/api";
 import type { AdminAuthResponse } from "@/types/admin";
 
 /**
  * Admin auth API client — every call carries `credentials: "include"` so the
  * browser sends/receives the backend's httpOnly session cookie
- * (onto_admin_token) across origins. The token itself is never read, stored,
- * or touched here: no localStorage, no sessionStorage, no request header.
- * See backend/src/config/auth.ts for why the cookie is configured the way
- * it is (secure + sameSite:none in production for the cross-origin Vercel
- * ↔ Render setup this depends on).
+ * (onto_admin_token). The token itself is never read, stored, or touched
+ * here: no localStorage, no sessionStorage, no request header.
+ *
+ * Calls hit same-origin relative paths (`/api/v1/...`), not the backend
+ * directly — next.config.ts rewrites these to the real API server-side, so
+ * the cookie the backend sets lands on the browser as first-party rather
+ * than a cross-site cookie mobile browsers silently drop. See
+ * next.config.ts and backend/src/config/auth.ts.
  */
 
 async function parseAuthResponse(res: Response): Promise<AdminAuthResponse> {
@@ -24,7 +26,7 @@ const UNREACHABLE_MESSAGE = "Unable to reach the server. Please try again.";
 /** POST /api/v1/auth/login */
 export async function loginAdmin(email: string, password: string): Promise<AdminAuthResponse> {
   try {
-    const res = await fetch(apiUrl("/api/v1/auth/login"), {
+    const res = await fetch("/api/v1/auth/login", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -43,7 +45,7 @@ export async function loginAdmin(email: string, password: string): Promise<Admin
  */
 export async function getCurrentAdmin(): Promise<AdminAuthResponse> {
   try {
-    const res = await fetch(apiUrl("/api/v1/auth/me"), {
+    const res = await fetch("/api/v1/auth/me", {
       method: "GET",
       credentials: "include",
     });
@@ -61,7 +63,7 @@ export async function getCurrentAdmin(): Promise<AdminAuthResponse> {
  */
 export async function logoutAdmin(): Promise<void> {
   try {
-    await fetch(apiUrl("/api/v1/auth/logout"), {
+    await fetch("/api/v1/auth/logout", {
       method: "POST",
       credentials: "include",
     });
