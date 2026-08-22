@@ -16,11 +16,11 @@ export default function HeroActions() {
 
       <Link
         href="/projects"
-        className="group hidden items-center gap-3 font-heading text-[0.75rem] font-semibold uppercase tracking-[0.15em] text-white transition-colors duration-300 hover:text-[var(--primary)] sm:inline-flex lg:text-sm"
+        className="group hidden items-center gap-3 font-heading text-[0.75rem] font-semibold uppercase tracking-[0.15em] text-white transition-colors duration-300 hover:text-[var(--primary)] active:text-[var(--primary)] sm:inline-flex lg:text-sm"
       >
         View Our Work
 
-        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[var(--primary)] text-[var(--primary)] transition-transform duration-300 group-hover:translate-x-1">
+        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[var(--primary)] text-[var(--primary)] transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1 group-active:scale-95">
           <ChevronRight size={14} />
         </span>
       </Link>

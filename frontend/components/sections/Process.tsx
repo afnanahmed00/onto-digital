@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Reveal from "@/components/ui/Reveal";
 
 export type ProcessStep = {
     number: string;
@@ -19,7 +20,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
            <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-12 sm:px-8 sm:py-14 lg:flex-row lg:gap-12 lg:px-10 lg:py-14 xl:px-10">
 
                 {/* Left */}
-                <div className="flex w-full max-w-[22rem] flex-col justify-center lg:sticky lg:top-32 lg:self-start">
+                <Reveal className="flex w-full max-w-[22rem] flex-col justify-center lg:sticky lg:top-32 lg:self-start">
 
                     <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
                         {badge}
@@ -33,7 +34,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                         {description}
                     </p>
 
-                </div>
+                </Reveal>
 
                 {/* Right */}
                 <div className="flex-1">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ProjectCard from "@/components/sections/ProjectCard";
+import Reveal from "@/components/ui/Reveal";
 import { getProjects } from "@/services/projects";
 
 // How many projects this homepage preview shows — always the first N from
@@ -29,7 +30,7 @@ export default async function Work() {
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start">
 
           {/* Left Content */}
-         <div className="flex w-full max-w-[20rem] flex-col justify-center text-left shrink-0">
+         <Reveal className="flex w-full max-w-[20rem] flex-col justify-center text-left shrink-0">
 
             <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
               OUR WORK
@@ -48,7 +49,7 @@ export default async function Work() {
               grow, engage and lead.
             </p>
 
-          </div>
+          </Reveal>
 
           {/* Project Cards — same ProjectCard used on /projects, always 2 per
               row here (the bento "large" span is deliberately not used;
@@ -72,11 +73,11 @@ export default async function Work() {
 
           <Link
             href="/projects"
-            className="group flex items-center gap-4 font-heading text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[var(--primary)]"
+            className="group flex items-center gap-4 font-heading text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[var(--primary)] active:opacity-80"
           >
             VIEW ALL CASE STUDIES
 
-            <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+            <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-active:translate-x-1 group-active:-translate-y-1">
               ↗
             </span>
           </Link>

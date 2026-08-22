@@ -48,10 +48,10 @@ export default function FloatingNav() {
               key={item.name}
               href={item.href}
               className={clsx(
-                "flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2.5 transition-all duration-300 sm:gap-2 sm:px-4 sm:py-3",
+                "flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2.5 transition-all duration-300 active:scale-[0.93] sm:gap-2 sm:px-4 sm:py-3",
                 active
                   ? "bg-[var(--primary)] text-black"
-                  : "text-white hover:bg-white/10"
+                  : "text-white hover:bg-white/10 active:bg-white/15"
               )}
             >
               <Icon

@@ -141,7 +141,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                 href={whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex h-[48px] items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--background-secondary)] font-heading text-[0.8rem] font-medium uppercase tracking-[0.06em] text-white transition-all duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)]"
+                className="group flex h-[48px] items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--background-secondary)] font-heading text-[0.8rem] font-medium uppercase tracking-[0.06em] text-white transition-all duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[0.97] active:border-[var(--primary)] active:text-[var(--primary)]"
               >
                 <MessageCircle size={17} strokeWidth={1.75} aria-hidden="true" />
                 WhatsApp
@@ -149,7 +149,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
 
               <a
                 href={emailHref}
-                className="group flex h-[48px] items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--background-secondary)] font-heading text-[0.8rem] font-medium uppercase tracking-[0.06em] text-white transition-all duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)]"
+                className="group flex h-[48px] items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--background-secondary)] font-heading text-[0.8rem] font-medium uppercase tracking-[0.06em] text-white transition-all duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[0.97] active:border-[var(--primary)] active:text-[var(--primary)]"
               >
                 <Mail size={17} strokeWidth={1.75} aria-hidden="true" />
                 Email

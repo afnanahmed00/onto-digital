@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 export type FAQItem = {
   question: string;
@@ -31,7 +32,7 @@ export default function FAQ({
 
           {/* Left */}
 
-          <div className="lg:sticky lg:top-28 lg:self-start">
+          <Reveal className="lg:sticky lg:top-28 lg:self-start">
 
             <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
               {badge}
@@ -45,7 +46,7 @@ export default function FAQ({
               {description}
             </p>
 
-          </div>
+          </Reveal>
 
           {/* Right */}
 
@@ -64,7 +65,7 @@ export default function FAQ({
                     onClick={() =>
                       setOpenIndex(isOpen ? -1 : index)
                     }
-                    className="flex w-full items-center justify-between gap-6 p-6 text-left"
+                    className="flex w-full items-center justify-between gap-6 p-6 text-left transition-colors duration-300 active:bg-white/[0.03]"
                   >
 
                     <h3 className="text-[0.95rem] font-medium uppercase leading-[1.5] text-white lg:text-[1rem]">

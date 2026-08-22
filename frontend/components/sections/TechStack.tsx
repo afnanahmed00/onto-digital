@@ -12,7 +12,7 @@ import {
   SiNextdotjs,
 } from "react-icons/si";
 import { Check, Cloud } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 type TechIcon = ComponentType<{ className?: string; style?: CSSProperties }>;
 
@@ -126,6 +126,7 @@ export default function TechStack() {
   const [activeId, setActiveId] = useState(techStack[0].id);
   const active = techStack.find((tech) => tech.id === activeId) ?? techStack[0];
   const ActiveIcon = active.icon;
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="border-t border-[var(--border)] bg-[var(--background)]">
@@ -207,9 +208,9 @@ export default function TechStack() {
                       aria-label={tech.name}
                       aria-pressed={isActive}
                       onClick={() => setActiveId(tech.id)}
-                      className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 sm:h-14 sm:w-14 lg:h-16 lg:w-16 ${isActive
+                      className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 active:scale-90 sm:h-14 sm:w-14 lg:h-16 lg:w-16 ${isActive
                           ? "border-[var(--primary)] bg-[var(--card-hover)] shadow-[0_0_20px_rgba(81,255,115,.45)]"
-                          : "border-[var(--border-card)] bg-[var(--background-secondary)] hover:border-[var(--primary)]/60"
+                          : "border-[var(--border-card)] bg-[var(--background-secondary)] hover:border-[var(--primary)]/60 active:border-[var(--primary)]/60"
                         }`}
                     >
                       <Icon
@@ -241,10 +242,10 @@ export default function TechStack() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={active.id}
-                initial={{ opacity: 0, y: 6 }}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
+                exit={shouldReduceMotion ? undefined : { opacity: 0, y: -6 }}
+                transition={{ duration: shouldReduceMotion ? 0 : 0.25, ease: "easeOut" }}
                 className="relative flex w-full flex-col items-center text-center"
               >
 

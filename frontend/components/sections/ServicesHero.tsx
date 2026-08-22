@@ -25,7 +25,7 @@ export default function ServicesHero() {
         <div className="mt-8 hidden w-full flex-col items-center gap-4 sm:flex sm:w-auto sm:flex-row sm:gap-8">
           <Link
             href="/contact"
-            className="group flex h-[45px] w-full items-center justify-center gap-3 rounded-xl border border-[var(--primary)] px-7 font-heading text-[0.8rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[var(--primary)] hover:text-black sm:w-auto"
+            className="group flex h-[45px] w-full items-center justify-center gap-3 rounded-xl border border-[var(--primary)] px-7 font-heading text-[0.8rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[var(--primary)] hover:text-black active:scale-[0.97] active:bg-[var(--primary)] active:text-black sm:w-auto"
           >
             <ArrowUpRight
               size={16}
@@ -36,11 +36,11 @@ export default function ServicesHero() {
 
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-3 font-heading text-[0.8rem] font-medium uppercase tracking-[0.15em] text-white transition-colors duration-300 hover:text-[var(--primary)]"
+            className="group inline-flex items-center gap-3 font-heading text-[0.8rem] font-medium uppercase tracking-[0.15em] text-white transition-colors duration-300 hover:text-[var(--primary)] active:text-[var(--primary)]"
           >
             VIEW OUR WORK
 
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[var(--primary)] text-[var(--primary)] transition-transform duration-300 group-hover:translate-x-1">
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[var(--primary)] text-[var(--primary)] transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1">
               <ChevronRight size={14} />
             </span>
           </Link>

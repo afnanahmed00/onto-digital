@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "@/components/ui/Reveal";
 
 const CENTER = { x: 680, y: 260 };
 const RINGS = [40, 85, 135, 190, 250, 315, 385];
@@ -40,7 +41,7 @@ export default function CTA() {
           </svg>
 
           <div className="relative flex flex-col items-center gap-8 px-4 py-8 text-center sm:px-6 sm:py-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-10 lg:py-12 lg:text-left">
-            <div className="lg:w-[58%]">
+            <Reveal className="lg:w-[58%]">
               <h2 className="text-[1.6rem] font-medium uppercase leading-[1.08] sm:text-[1.8rem] lg:text-[2.2rem] xl:text-[2.5rem]">
                 READY TO BUILD SOMETHING
                 <br />
@@ -51,12 +52,12 @@ export default function CTA() {
                 Let&apos;s create digital experiences that drive growth,
                 engage your audience and set you apart.
               </p>
-            </div>
+            </Reveal>
 
             <div className="flex justify-center lg:w-[42%] lg:justify-end">
               <Link
                 href="/contact"
-                className="group flex h-[42px] items-center gap-2 whitespace-nowrap rounded-[14px] border border-[var(--primary)] bg-[var(--background)] px-4 font-heading text-[0.62rem] font-medium uppercase tracking-[0.08em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(81,255,115,0.3)] sm:h-[50px] sm:gap-3 sm:rounded-[16px] sm:px-6 sm:text-[0.75rem] lg:h-[60px] lg:gap-4 lg:rounded-[18px] lg:px-10 lg:text-[0.85rem]"
+                className="group flex h-[42px] items-center gap-2 whitespace-nowrap rounded-[14px] border border-[var(--primary)] bg-[var(--background)] px-4 font-heading text-[0.62rem] font-medium uppercase tracking-[0.08em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(81,255,115,0.3)] active:scale-[0.97] active:shadow-[0_0_30px_rgba(81,255,115,0.3)] sm:h-[50px] sm:gap-3 sm:rounded-[16px] sm:px-6 sm:text-[0.75rem] lg:h-[60px] lg:gap-4 lg:rounded-[18px] lg:px-10 lg:text-[0.85rem]"
               >
                 <span className="text-[var(--primary)] transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
                   ↗

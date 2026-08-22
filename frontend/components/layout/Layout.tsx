@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Header from "./Header";
 import Footer from "./Footer";
 import FloatingNav from "./FloatingNav";
+import PageTransition from "./PageTransition";
 
 interface LayoutProps {
   children: ReactNode;
@@ -30,7 +31,9 @@ export default function Layout({ children }: LayoutProps) {
     <>
       <Header />
 
-      <main>{children}</main>
+      <main>
+        <PageTransition>{children}</PageTransition>
+      </main>
 
       <Footer />
 

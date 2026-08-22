@@ -56,6 +56,9 @@
     color: var(--text-primary);
     font-family: var(--font-body);
     min-height: 100vh;
+    /* Custom active: tap states below replace the browser's default gray
+       tap flash — without this they'd render on top of each other. */
+    -webkit-tap-highlight-color: transparent;
   }
 
   img {
@@ -152,4 +155,15 @@
 
 .animate-orbit-spin-reverse {
   animation: orbit-spin-reverse 70s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -3,7 +3,7 @@ import ContactForm from "@/components/forms/ContactForm";
 import { contactInfo } from "@/data/contactInfo";
 
 const infoRowStyles =
-  "group/item -mx-3 flex items-start gap-4 rounded-xl px-3 py-5 transition-all duration-300 first:pt-0 last:pb-0 hover:-translate-y-1 hover:bg-white/[0.03]";
+  "group/item -mx-3 flex items-start gap-4 rounded-xl px-3 py-5 transition-all duration-300 first:pt-0 last:pb-0 hover:-translate-y-1 hover:bg-white/[0.03] active:bg-white/[0.05] active:scale-[0.99]";
 
 /** Renders as a link when a real destination exists, otherwise a plain row. */
 function ContactInfoRow({ href, children }: { href?: string; children: ReactNode }) {

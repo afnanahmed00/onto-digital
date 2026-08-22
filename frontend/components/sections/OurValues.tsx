@@ -6,6 +6,7 @@ import {
   User,
   type LucideIcon,
 } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 const values: { icon: LucideIcon; title: string; description: string }[] = [
   {
@@ -45,15 +46,17 @@ export default function OurValues() {
     <section className="border-t border-[var(--border)] bg-[var(--background)]">
       <div className="mx-auto max-w-[1440px] px-5 py-[50px] sm:px-8 sm:py-16 lg:px-10 lg:py-20 xl:px-10">
 
-        <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
-          OUR VALUES
-        </span>
+        <Reveal>
+          <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
+            OUR VALUES
+          </span>
 
-        <h2 className="mt-2 max-w-2xl text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
-          THE PRINCIPLES THAT
-          <br />
-          DRIVE EVERYTHING WE DO
-        </h2>
+          <h2 className="mt-2 max-w-2xl text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
+            THE PRINCIPLES THAT
+            <br />
+            DRIVE EVERYTHING WE DO
+          </h2>
+        </Reveal>
 
         <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-3 lg:grid-cols-5 lg:gap-5">
 

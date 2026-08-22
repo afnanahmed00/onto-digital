@@ -35,10 +35,10 @@ export default function ProjectFilters({ categories, selected, onChange }: Proje
             aria-pressed={isActive}
             onClick={() => onChange(option)}
             className={clsx(
-              "shrink-0 whitespace-nowrap rounded-full border px-6 py-3 text-[0.72rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]",
+              "shrink-0 whitespace-nowrap rounded-full border px-6 py-3 text-[0.72rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 active:scale-[0.95] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]",
               isActive
                 ? "border-[var(--primary)] bg-[var(--primary)] text-black"
-                : "border-[var(--border-card)] text-white hover:border-[var(--primary)] hover:text-[var(--primary)]"
+                : "border-[var(--border-card)] text-white hover:border-[var(--primary)] hover:text-[var(--primary)] active:border-[var(--primary)] active:text-[var(--primary)]"
             )}
           >
             {option}

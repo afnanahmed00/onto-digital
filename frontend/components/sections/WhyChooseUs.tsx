@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
+import Reveal from "@/components/ui/Reveal";
 
 export type Feature = {
   icon: LucideIcon;
@@ -33,7 +34,7 @@ export default function WhyChooseUs({
 
           {/* Left */}
 
-          <div>
+          <Reveal>
 
             <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
               {badge}
@@ -49,15 +50,15 @@ export default function WhyChooseUs({
 
             <Link
               href={buttonHref}
-              className="group mt-9 inline-flex h-[36px] items-center gap-2 whitespace-nowrap rounded-xl border border-[var(--primary)] px-4 font-heading text-[0.62rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[var(--primary)] hover:text-black sm:h-[45px] sm:gap-4 sm:px-7 sm:text-[0.85rem]"
+              className="group mt-9 inline-flex h-[36px] items-center gap-2 whitespace-nowrap rounded-xl border border-[var(--primary)] px-4 font-heading text-[0.62rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[var(--primary)] hover:text-black active:scale-[0.97] active:bg-[var(--primary)] active:text-black sm:h-[45px] sm:gap-4 sm:px-7 sm:text-[0.85rem]"
             >
               {buttonText}
-              <span className="text-[var(--primary)] text-[0.85rem] transition-all group-hover:text-black sm:text-[1rem]">
+              <span className="text-[var(--primary)] text-[0.85rem] transition-all group-hover:text-black group-active:text-black sm:text-[1rem]">
                 ↗
               </span>
             </Link>
 
-          </div>
+          </Reveal>
 
           {/* Right */}
 

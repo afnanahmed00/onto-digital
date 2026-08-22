@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Reveal from "@/components/ui/Reveal";
 
 const testimonials = [
   {
@@ -91,7 +92,7 @@ export default function Testimonials() {
       <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-12 sm:px-8 sm:py-14 lg:flex-row lg:items-start lg:gap-12 lg:px-10 lg:py-14 xl:px-10">
 
         {/* Left Content */}
-        <div className="flex w-full max-w-[20rem] shrink-0 flex-col justify-center   text-left">
+        <Reveal className="flex w-full max-w-[20rem] shrink-0 flex-col justify-center   text-left">
           <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
             TESTIMONIALS
           </span>
@@ -105,13 +106,13 @@ export default function Testimonials() {
             trust.
           </p>
 
-          <button className="group mt-5 flex items-center gap-4 text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[var(--primary)]">
+          <button className="group mt-5 flex items-center gap-4 text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[var(--primary)] active:opacity-80">
             VIEW ALL TESTIMONIALS
-            <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+            <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-active:translate-x-1 group-active:-translate-y-1">
               ↗
             </span>
           </button>
-        </div>
+        </Reveal>
 
         {/* Slider */}
         <div className="min-w-0 flex-1">
@@ -119,14 +120,14 @@ export default function Testimonials() {
             <button
               aria-label="Previous testimonial"
               onClick={prev}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border-card)] text-[var(--text-body)] transition-colors duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)]"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border-card)] text-[var(--text-body)] transition-all duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[0.93] active:border-[var(--primary)] active:text-[var(--primary)]"
             >
               ←
             </button>
             <button
               aria-label="Next testimonial"
               onClick={next}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--primary)] text-[var(--primary)] transition-colors duration-300 hover:bg-[var(--primary)] hover:text-black"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--primary)] text-[var(--primary)] transition-all duration-300 hover:bg-[var(--primary)] hover:text-black active:scale-[0.93] active:bg-[var(--primary)] active:text-black"
             >
               →
             </button>
@@ -179,14 +180,14 @@ export default function Testimonials() {
             <button
               aria-label="Previous testimonial"
               onClick={prev}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border-card)] text-[var(--text-body)] transition-colors duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)]"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border-card)] text-[var(--text-body)] transition-all duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[0.93] active:border-[var(--primary)] active:text-[var(--primary)]"
             >
               ←
             </button>
             <button
               aria-label="Next testimonial"
               onClick={next}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--primary)] text-[var(--primary)] transition-colors duration-300 hover:bg-[var(--primary)] hover:text-black"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--primary)] text-[var(--primary)] transition-all duration-300 hover:bg-[var(--primary)] hover:text-black active:scale-[0.93] active:bg-[var(--primary)] active:text-black"
             >
               →
             </button>

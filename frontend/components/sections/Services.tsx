@@ -42,10 +42,10 @@ export default async function Services() {
 
                     <Link
                         href="/services"
-                        className="group mt-5 flex items-center gap-4 font-heading text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[var(--primary)]"
+                        className="group mt-5 flex items-center gap-4 font-heading text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[var(--primary)] active:opacity-80"
                     >
                         Explore All Services
-                        <span className="transition-transform duration-300 group-hover:translate-x-1">
+                        <span className="transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1">
                             ↗
                         </span>
                     </Link>
@@ -60,7 +60,7 @@ export default async function Services() {
                             <Link
                                 key={service.slug}
                                 href={`/services/${service.slug}`}
-                                className="group relative flex min-h-[11rem] flex-col overflow-hidden rounded-[1rem] border border-[var(--border-card)] bg-[var(--card)] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)] hover:shadow-[0_0_30px_rgba(81,255,115,.15)] sm:min-h-[18rem] sm:rounded-[1.25rem] sm:p-5 lg:min-h-[21rem] lg:p-7"
+                                className="group relative flex min-h-[11rem] flex-col overflow-hidden rounded-[1rem] border border-[var(--border-card)] bg-[var(--card)] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)] hover:shadow-[0_0_30px_rgba(81,255,115,.15)] active:scale-[0.97] active:border-[var(--primary)] active:shadow-[0_0_30px_rgba(81,255,115,.15)] sm:min-h-[18rem] sm:rounded-[1.25rem] sm:p-5 lg:min-h-[21rem] lg:p-7"
                             >
                                 {/* Top shine */}
                                 <div className="pointer-events-none absolute left-1/2 top-0 h-16 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)]/25 opacity-70 blur-2xl transition-opacity duration-300 group-hover:opacity-100 sm:h-20 sm:w-32" />

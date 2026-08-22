@@ -71,7 +71,7 @@ export default function Footer() {
                   aria-label={name}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-white transition-colors duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)]"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-white transition-all duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[0.93] active:border-[var(--primary)] active:text-[var(--primary)]"
                 >
                   <Icon size={18} />
                 </a>
@@ -92,7 +92,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[15px] text-[var(--text-secondary)] transition-colors duration-300 hover:text-[var(--primary)]"
+                      className="text-[15px] text-[var(--text-secondary)] transition-colors duration-300 hover:text-[var(--primary)] active:text-[var(--primary)]"
                     >
                       {link.label}
                     </Link>
