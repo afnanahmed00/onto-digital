@@ -22,7 +22,7 @@ export default function ServicesHero() {
           scale faster and achieve remarkable results.
         </p>
 
-        <div className="mt-8 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row sm:gap-8">
+        <div className="mt-8 hidden w-full flex-col items-center gap-4 sm:flex sm:w-auto sm:flex-row sm:gap-8">
           <Link
             href="/contact"
             className="group flex h-[45px] w-full items-center justify-center gap-3 rounded-xl border border-[var(--primary)] px-7 font-heading text-[0.8rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[var(--primary)] hover:text-black sm:w-auto"

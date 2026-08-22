@@ -8,7 +8,7 @@ export default function HeroActions() {
       <Button
         href="/services"
         variant="outline"
-        className="w-full max-w-[15rem] justify-center px-4 py-2.5 text-[0.68rem] sm:w-auto sm:max-w-none sm:px-5 sm:py-3 sm:text-[0.75rem] lg:px-6 lg:py-3 lg:text-sm"
+        className="w-full max-w-[11rem] justify-center px-3 py-2 text-[0.6rem] sm:w-auto sm:max-w-none sm:px-5 sm:py-3 sm:text-[0.75rem] lg:px-6 lg:py-3 lg:text-sm"
       >
         <ArrowUpRight size={16} className="text-[var(--primary)]" />
         Explore Services

@@ -22,7 +22,7 @@ type PhoneFieldProps = {
 // Shares the site's field look (border, background, hover/focus green) with
 // FormField so the combined control reads as one continuous input.
 const fieldStyles =
-  "rounded-xl border bg-[var(--background-secondary)] font-sans text-[0.9rem] text-white transition-colors duration-300 hover:border-[var(--primary)] focus:border-[var(--primary)] focus:outline-none";
+  "rounded-xl border bg-[var(--background-secondary)] font-sans text-[0.9rem] text-white placeholder:text-[0.9rem] placeholder:text-[var(--text-muted)] transition-colors duration-300 hover:border-[var(--primary)] focus:border-[var(--primary)] focus:outline-none";
 
 /**
  * Country-code selector + local phone number input, styled to match
@@ -63,7 +63,7 @@ export default function PhoneField({
             className={clsx(
               fieldStyles,
               borderStyles,
-              "h-[52px] w-[5.75rem] appearance-none pl-3 pr-6 text-[0.85rem] sm:w-[6.25rem]"
+              "h-[52px] w-[4.75rem] appearance-none pl-3 pr-5 text-[0.8rem] sm:w-[5.5rem]"
             )}
           >
             {COUNTRIES.map((country) => (

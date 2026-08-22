@@ -39,7 +39,7 @@ type FormFieldProps = InputFieldProps | TextareaFieldProps | SelectFieldProps;
 // Normal body copy (sans-serif) — kept separate from the site's display/heading
 // font so form input, placeholder and typed text never render in it.
 const fieldStyles =
-  "w-full rounded-xl border bg-[var(--background-secondary)] font-sans text-[0.9rem] text-white placeholder:text-[var(--text-muted)] transition-colors duration-300 hover:border-[var(--primary)] focus:border-[var(--primary)] focus:outline-none";
+  "w-full rounded-xl border bg-[var(--background-secondary)] font-sans text-[0.9rem] text-white placeholder:text-[0.9rem] placeholder:text-[var(--text-muted)] transition-colors duration-300 hover:border-[var(--primary)] focus:border-[var(--primary)] focus:outline-none";
 
 /** Shared input/textarea/select used across the contact form — label stays accessible even though only the icon + placeholder are shown. */
 export default function FormField(props: FormFieldProps) {

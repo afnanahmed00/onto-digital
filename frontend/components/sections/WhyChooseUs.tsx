@@ -49,10 +49,10 @@ export default function WhyChooseUs({
 
             <Link
               href={buttonHref}
-              className="group mt-9 inline-flex h-[45px] items-center gap-4 rounded-xl border border-[var(--primary)] px-7 font-heading text-[0.85rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[var(--primary)] hover:text-black"
+              className="group mt-9 inline-flex h-[36px] items-center gap-2 whitespace-nowrap rounded-xl border border-[var(--primary)] px-4 font-heading text-[0.62rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[var(--primary)] hover:text-black sm:h-[45px] sm:gap-4 sm:px-7 sm:text-[0.85rem]"
             >
               {buttonText}
-              <span className="text-[var(--primary)] text-[1rem] transition-all group-hover:text-black">
+              <span className="text-[var(--primary)] text-[0.85rem] transition-all group-hover:text-black sm:text-[1rem]">
                 ↗
               </span>
             </Link>

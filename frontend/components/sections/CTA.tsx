@@ -56,7 +56,7 @@ export default function CTA() {
             <div className="flex justify-center lg:w-[42%] lg:justify-end">
               <Link
                 href="/contact"
-                className="group flex h-[60px] items-center gap-4 rounded-[18px] border border-[var(--primary)] bg-[var(--background)] px-8 lg:px-10 font-heading text-[0.8rem] lg:text-[0.85rem] font-medium uppercase tracking-[0.08em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(81,255,115,0.3)]"
+                className="group flex h-[42px] items-center gap-2 whitespace-nowrap rounded-[14px] border border-[var(--primary)] bg-[var(--background)] px-4 font-heading text-[0.62rem] font-medium uppercase tracking-[0.08em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(81,255,115,0.3)] sm:h-[50px] sm:gap-3 sm:rounded-[16px] sm:px-6 sm:text-[0.75rem] lg:h-[60px] lg:gap-4 lg:rounded-[18px] lg:px-10 lg:text-[0.85rem]"
               >
                 <span className="text-[var(--primary)] transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
                   ↗
