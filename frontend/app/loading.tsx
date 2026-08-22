@@ -11,7 +11,7 @@ export default function Loading() {
     <div
       role="status"
       aria-live="polite"
-      className="flex min-h-screen w-full flex-col items-center justify-center gap-8 bg-black px-5 text-center"
+      className="flex min-h-screen w-full flex-col items-center justify-center gap-8 bg-[var(--background)] px-5 text-center"
     >
       <Logo
         iconClassName="h-9 w-9 sm:h-10 sm:w-10"

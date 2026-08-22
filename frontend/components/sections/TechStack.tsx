@@ -128,23 +128,23 @@ export default function TechStack() {
   const ActiveIcon = active.icon;
 
   return (
-    <section className="border-t border-[#1f1f1f] bg-black">
+    <section className="border-t border-[var(--border)] bg-[var(--background)]">
       <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16 xl:px-10">
 
         {/* Heading */}
         <div className="mx-auto flex max-w-[38rem] flex-col items-center text-center">
 
-          <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+          <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
             OUR TECH STACK
           </span>
 
           <h2 className="mt-2 text-[2rem] font-medium uppercase leading-[1.08] sm:text-[2.5rem]">
             TECHNOLOGIES
             <br />
-            WE <span className="text-[#51FF73]">BUILD</span> WITH
+            WE <span className="text-[var(--primary)]">BUILD</span> WITH
           </h2>
 
-          <p className="mt-4 text-[0.85rem] leading-[1.9] text-[#A7A7A7] sm:text-[0.95rem]">
+          <p className="mt-4 text-[0.85rem] leading-[1.9] text-[var(--text-body)] sm:text-[0.95rem]">
             We carefully choose modern technologies that deliver exceptional
             performance, scalability and long-term reliability for every project.
           </p>
@@ -159,13 +159,13 @@ export default function TechStack() {
         <div className="group relative mx-auto mt-14 h-[min(340px,85vw)] w-[min(340px,85vw)] overflow-hidden sm:mt-16 sm:h-[460px] sm:w-[460px] lg:mt-20 lg:h-[620px] lg:w-[620px]">
 
           {/* Ambient glow */}
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[40%] w-[40%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#51FF73]/10 blur-[60px]" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[40%] w-[40%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)]/10 blur-[60px]" />
 
           {/* Outer path (tech stack orbit) */}
-          <div className="absolute inset-0 rounded-full border border-dashed border-[#51FF73]/25" />
+          <div className="absolute inset-0 rounded-full border border-dashed border-[var(--primary)]/25" />
 
           {/* Extra ring between the tech stack and the center circle */}
-          <div className="absolute inset-[15%] rounded-full border border-[#51FF73]/15" />
+          <div className="absolute inset-[15%] rounded-full border border-[var(--primary)]/15" />
 
           {/* Rotating layer: nodes + path dots */}
           <div className="animate-orbit-spin absolute inset-0 [--dot-radius:min(166px,41.5vw)] [--radius:min(144px,36vw)] group-hover:[animation-play-state:paused] sm:[--dot-radius:226px] sm:[--radius:198px] lg:[--dot-radius:306px] lg:[--radius:272px]">
@@ -177,7 +177,7 @@ export default function TechStack() {
               return (
                 <div
                   key={`dot-${tech.id}`}
-                  className="absolute left-1/2 top-1/2 h-1.5 w-1.5 rounded-full bg-[#51FF73]/70 shadow-[0_0_6px_rgba(81,255,115,.8)]"
+                  className="absolute left-1/2 top-1/2 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/70 shadow-[0_0_6px_rgba(81,255,115,.8)]"
                   style={{
                     transform: `translate(-50%, -50%) rotate(${dotAngle}deg) translateX(var(--dot-radius))`,
                   }}
@@ -208,8 +208,8 @@ export default function TechStack() {
                       aria-pressed={isActive}
                       onClick={() => setActiveId(tech.id)}
                       className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 sm:h-14 sm:w-14 lg:h-16 lg:w-16 ${isActive
-                          ? "border-[#51FF73] bg-[#0D2415] shadow-[0_0_20px_rgba(81,255,115,.45)]"
-                          : "border-[#333] bg-[#0A0A0A] hover:border-[#51FF73]/60"
+                          ? "border-[var(--primary)] bg-[var(--card-hover)] shadow-[0_0_20px_rgba(81,255,115,.45)]"
+                          : "border-[var(--border-card)] bg-[var(--background-secondary)] hover:border-[var(--primary)]/60"
                         }`}
                     >
                       <Icon
@@ -219,7 +219,7 @@ export default function TechStack() {
                     </button>
 
                     <span
-                      className={`text-[0.5rem] font-medium uppercase tracking-wide transition-colors duration-300 sm:text-[0.65rem] lg:text-[0.72rem] ${isActive ? "text-[#51FF73]" : "text-[#8a8a8a]"
+                      className={`text-[0.5rem] font-medium uppercase tracking-wide transition-colors duration-300 sm:text-[0.65rem] lg:text-[0.72rem] ${isActive ? "text-[var(--primary)]" : "text-[var(--text-body)]"
                         }`}
                     >
                       {tech.name}
@@ -233,10 +233,10 @@ export default function TechStack() {
           </div>
 
           {/* Center circle */}
-          <div className="absolute left-1/2 top-1/2 flex h-[46%] w-[46%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center overflow-hidden rounded-full border border-[#262626] bg-[#050505] p-3 text-center shadow-[0_0_25px_rgba(0,0,0,.6),0_0_45px_rgba(81,255,115,.2)] sm:p-5">
+          <div className="absolute left-1/2 top-1/2 flex h-[46%] w-[46%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center overflow-hidden rounded-full border border-[var(--border-card)] bg-[var(--card)] p-3 text-center shadow-[0_0_25px_rgba(0,0,0,.6),0_0_45px_rgba(81,255,115,.2)] sm:p-5">
 
             {/* Shine */}
-            <div className="pointer-events-none absolute left-1/2 top-0 h-14 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#51FF73]/25 opacity-70 blur-2xl sm:h-20 sm:w-28" />
+            <div className="pointer-events-none absolute left-1/2 top-0 h-14 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)]/25 opacity-70 blur-2xl sm:h-20 sm:w-28" />
 
             <AnimatePresence mode="wait">
               <motion.div
@@ -248,7 +248,7 @@ export default function TechStack() {
                 className="relative flex w-full flex-col items-center text-center"
               >
 
-                <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[#3a3a3a] bg-black/40 sm:h-9 sm:w-9 lg:h-11 lg:w-11">
+                <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[#3a3a3a] bg-[var(--background)]/40 sm:h-9 sm:w-9 lg:h-11 lg:w-11">
                   <ActiveIcon
                     style={{ color: active.color }}
                     className="h-3.5 w-3.5 sm:h-4 sm:w-4 lg:h-5 lg:w-5"
@@ -259,13 +259,13 @@ export default function TechStack() {
                   {active.name}
                 </h3>
 
-                <span className="mt-1 text-[0.42rem] font-medium uppercase tracking-[0.12em] text-[#51FF73] sm:text-[0.5rem] lg:text-[0.6rem]">
+                <span className="mt-1 text-[0.42rem] font-medium uppercase tracking-[0.12em] text-[var(--primary)] sm:text-[0.5rem] lg:text-[0.6rem]">
                   {active.category}
                 </span>
 
-                <div className="mt-2 h-px w-7 bg-[#51FF73]/30 sm:mt-3 sm:w-9" />
+                <div className="mt-2 h-px w-7 bg-[var(--primary)]/30 sm:mt-3 sm:w-9" />
 
-                <p className="mt-2 line-clamp-2 text-center text-[0.4rem] leading-[1.4] text-[#9A9A9A] sm:mt-3 sm:line-clamp-none sm:text-[0.5rem] sm:leading-[1.6] lg:text-[0.6rem]">
+                <p className="mt-2 line-clamp-2 text-center text-[0.4rem] leading-[1.4] text-[var(--text-body)] sm:mt-3 sm:line-clamp-none sm:text-[0.5rem] sm:leading-[1.6] lg:text-[0.6rem]">
                   {active.description}
                 </p>
 
@@ -276,8 +276,8 @@ export default function TechStack() {
                         key={feature}
                         className="flex items-center justify-center gap-1.5"
                       >
-                        <Check className="h-3 w-3 shrink-0 text-[#51FF73]" />
-                        <span className="text-[0.5rem] text-[#C9C9C9]">
+                        <Check className="h-3 w-3 shrink-0 text-[var(--primary)]" />
+                        <span className="text-[0.5rem] text-[var(--text-body)]">
                           {feature}
                         </span>
                       </div>

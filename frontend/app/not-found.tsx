@@ -8,7 +8,7 @@ import Button from "@/components/ui/Button";
  */
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-6 bg-black px-5 py-20 text-center">
+    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-6 bg-[var(--background)] px-5 py-20 text-center">
       <Logo />
 
       <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
@@ -19,7 +19,7 @@ export default function NotFound() {
         PAGE NOT FOUND
       </h1>
 
-      <p className="max-w-[28rem] text-[0.85rem] leading-[1.9] text-[#A7A7A7] sm:text-[0.95rem]">
+      <p className="max-w-[28rem] text-[0.85rem] leading-[1.9] text-[var(--text-body)] sm:text-[0.95rem]">
         The page you&apos;re looking for doesn&apos;t exist or may have been
         moved.
       </p>

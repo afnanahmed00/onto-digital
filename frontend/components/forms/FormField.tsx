@@ -39,7 +39,7 @@ type FormFieldProps = InputFieldProps | TextareaFieldProps | SelectFieldProps;
 // Normal body copy (sans-serif) — kept separate from the site's display/heading
 // font so form input, placeholder and typed text never render in it.
 const fieldStyles =
-  "w-full rounded-xl border bg-[#0A0A0A] font-sans text-[0.9rem] text-white placeholder:text-[#6B6B6B] transition-colors duration-300 hover:border-[#51FF73] focus:border-[#51FF73] focus:outline-none";
+  "w-full rounded-xl border bg-[var(--background-secondary)] font-sans text-[0.9rem] text-white placeholder:text-[var(--text-muted)] transition-colors duration-300 hover:border-[var(--primary)] focus:border-[var(--primary)] focus:outline-none";
 
 /** Shared input/textarea/select used across the contact form — label stays accessible even though only the icon + placeholder are shown. */
 export default function FormField(props: FormFieldProps) {
@@ -57,7 +57,7 @@ export default function FormField(props: FormFieldProps) {
   } = props;
   const isTextarea = props.as === "textarea";
   const isSelect = props.as === "select";
-  const borderStyles = invalid ? "border-[#FF5C5C]" : "border-[#262626]";
+  const borderStyles = invalid ? "border-[#FF5C5C]" : "border-[var(--border-card)]";
 
   return (
     <div className="flex flex-col">
@@ -71,7 +71,7 @@ export default function FormField(props: FormFieldProps) {
           strokeWidth={1.75}
           aria-hidden="true"
           className={clsx(
-            "pointer-events-none absolute left-4 z-10 text-[#6B6B6B] transition-colors duration-300 group-focus-within:text-[#51FF73]",
+            "pointer-events-none absolute left-4 z-10 text-[var(--text-muted)] transition-colors duration-300 group-focus-within:text-[var(--primary)]",
             isTextarea ? "top-4" : "top-1/2 -translate-y-1/2"
           )}
         />
@@ -100,14 +100,14 @@ export default function FormField(props: FormFieldProps) {
                 fieldStyles,
                 borderStyles,
                 "h-[52px] appearance-none pl-11 pr-10",
-                value ? "text-white" : "text-[#6B6B6B]"
+                value ? "text-white" : "text-[var(--text-muted)]"
               )}
             >
               <option value="" disabled hidden>
                 {placeholder}
               </option>
               {(props as SelectFieldProps).options.map((option) => (
-                <option key={option.value} value={option.value} className="bg-[#0A0A0A] text-white">
+                <option key={option.value} value={option.value} className="bg-[var(--background-secondary)] text-white">
                   {option.label}
                 </option>
               ))}
@@ -117,7 +117,7 @@ export default function FormField(props: FormFieldProps) {
               size={16}
               strokeWidth={1.75}
               aria-hidden="true"
-              className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#6B6B6B] transition-colors duration-300 group-focus-within:text-[#51FF73]"
+              className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)] transition-colors duration-300 group-focus-within:text-[var(--primary)]"
             />
           </>
         ) : (

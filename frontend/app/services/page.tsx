@@ -52,7 +52,7 @@ export default function ServicesPage() {
             <br />
             SERVICE PROVIDER
             <br />
-            WE ARE YOUR <span className="text-[#51FF73]">DIGITAL PARTNER</span>
+            WE ARE YOUR <span className="text-[var(--primary)]">DIGITAL PARTNER</span>
           </>
         }
         description="From planning and design to development and long-term support, we work as an extension of your team to deliver measurable business growth."
@@ -82,7 +82,7 @@ export default function ServicesPage() {
             <br />
             WE HAVE
             <br />
-            <span className="text-[#51FF73]">ANSWERS</span>
+            <span className="text-[var(--primary)]">ANSWERS</span>
           </>
         }
         description="Find answers to the most common questions about our services, development process and project delivery."

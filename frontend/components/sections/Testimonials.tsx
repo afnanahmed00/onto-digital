@@ -87,25 +87,25 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="border-t border-[#1f1f1f] bg-black">
+    <section className="border-t border-[var(--border)] bg-[var(--background)]">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-12 sm:px-8 sm:py-14 lg:flex-row lg:items-start lg:gap-12 lg:px-10 lg:py-14 xl:px-10">
 
         {/* Left Content */}
         <div className="flex w-full max-w-[20rem] shrink-0 flex-col justify-center   text-left">
-          <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+          <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
             TESTIMONIALS
           </span>
 
           <h2 className="mt-2 text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
-            WHAT OUR <span className="text-[#51FF73]">CLIENTS</span> SAY
+            WHAT OUR <span className="text-[var(--primary)]">CLIENTS</span> SAY
           </h2>
 
-          <p className="mt-6 max-w-[20rem] text-[1rem] leading-[1.8] text-[#A7A7A7] lg:text-[1rem]">
+          <p className="mt-6 max-w-[20rem] text-[1rem] leading-[1.8] text-[var(--text-body)] lg:text-[1rem]">
             We build lasting partnerships through results, communication and
             trust.
           </p>
 
-          <button className="group mt-5 flex items-center gap-4 text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]">
+          <button className="group mt-5 flex items-center gap-4 text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[var(--primary)]">
             VIEW ALL TESTIMONIALS
             <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
               ↗
@@ -119,14 +119,14 @@ export default function Testimonials() {
             <button
               aria-label="Previous testimonial"
               onClick={prev}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#262626] text-[#A7A7A7] transition-colors duration-300 hover:border-[#51FF73] hover:text-[#51FF73]"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border-card)] text-[var(--text-body)] transition-colors duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)]"
             >
               ←
             </button>
             <button
               aria-label="Next testimonial"
               onClick={next}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#51FF73] text-[#51FF73] transition-colors duration-300 hover:bg-[#51FF73] hover:text-black"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--primary)] text-[var(--primary)] transition-colors duration-300 hover:bg-[var(--primary)] hover:text-black"
             >
               →
             </button>
@@ -143,12 +143,12 @@ export default function Testimonials() {
             >
               {slides.map((item, i) => (
                 <div key={`${item.name}-${i}`} className="w-full shrink-0 px-2 sm:w-1/2">
-                  <article className="group flex h-full flex-col rounded-[20px] border border-[#262626] bg-[#050505] p-6 transition-colors duration-300 hover:border-[#51FF73] lg:p-7">
-                    <span className="font-heading text-[2.5rem] font-bold leading-none text-[#51FF73]">
+                  <article className="group flex h-full flex-col rounded-[20px] border border-[var(--border-card)] bg-[var(--card)] p-6 transition-colors duration-300 hover:border-[var(--primary)] lg:p-7">
+                    <span className="font-heading text-[2.5rem] font-bold leading-none text-[var(--primary)]">
                       ❝
                     </span>
 
-                    <p className="mt-4 flex-1 text-[0.95rem] leading-[1.8] text-[#D4D4D4]">
+                    <p className="mt-4 flex-1 text-[0.95rem] leading-[1.8] text-[var(--text-body)]">
                       {item.review}
                     </p>
 
@@ -164,7 +164,7 @@ export default function Testimonials() {
                         <h3 className="text-[0.95rem] font-medium text-white">
                           {item.name}
                         </h3>
-                        <p className="text-[0.8rem] text-[#A7A7A7]">
+                        <p className="text-[0.8rem] text-[var(--text-body)]">
                           {item.role}, {item.company}
                         </p>
                       </div>
@@ -179,14 +179,14 @@ export default function Testimonials() {
             <button
               aria-label="Previous testimonial"
               onClick={prev}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#262626] text-[#A7A7A7] transition-colors duration-300 hover:border-[#51FF73] hover:text-[#51FF73]"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border-card)] text-[var(--text-body)] transition-colors duration-300 hover:border-[var(--primary)] hover:text-[var(--primary)]"
             >
               ←
             </button>
             <button
               aria-label="Next testimonial"
               onClick={next}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#51FF73] text-[#51FF73] transition-colors duration-300 hover:bg-[#51FF73] hover:text-black"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--primary)] text-[var(--primary)] transition-colors duration-300 hover:bg-[var(--primary)] hover:text-black"
             >
               →
             </button>

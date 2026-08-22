@@ -4,7 +4,7 @@ import { Plus, Shapes, Tag, X } from "lucide-react";
 import type { AdminServiceFeature } from "@/types/adminService";
 
 const inputStyles =
-  "w-full rounded-xl border border-[#262626] bg-[#0A0A0A] py-2.5 pl-9 pr-3 font-sans text-[0.85rem] text-white placeholder:text-[#6B6B6B] transition-colors duration-300 hover:border-[#51FF73] focus:border-[#51FF73] focus:outline-none";
+  "w-full rounded-xl border border-[var(--border-card)] bg-[var(--background-secondary)] py-2.5 pl-9 pr-3 font-sans text-[0.85rem] text-white placeholder:text-[var(--text-muted)] transition-colors duration-300 hover:border-[var(--primary)] focus:border-[var(--primary)] focus:outline-none";
 
 type ServiceFeaturesEditorProps = {
   features: AdminServiceFeature[];
@@ -54,7 +54,7 @@ export default function ServiceFeaturesEditor({
                 size={15}
                 strokeWidth={1.75}
                 aria-hidden="true"
-                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#6B6B6B] transition-colors duration-300 group-focus-within:text-[#51FF73]"
+                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)] transition-colors duration-300 group-focus-within:text-[var(--primary)]"
               />
               <input
                 type="text"
@@ -72,7 +72,7 @@ export default function ServiceFeaturesEditor({
                 size={15}
                 strokeWidth={1.75}
                 aria-hidden="true"
-                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#6B6B6B] transition-colors duration-300 group-focus-within:text-[#51FF73]"
+                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)] transition-colors duration-300 group-focus-within:text-[var(--primary)]"
               />
               <input
                 type="text"

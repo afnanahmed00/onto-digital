@@ -295,7 +295,7 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
           className={
             "flex items-center gap-2 rounded-xl border px-4 py-3 text-[0.82rem] leading-[1.6] " +
             (status.type === "success"
-              ? "border-[#51FF73]/35 bg-[#51FF73]/[0.06] text-[#51FF73]"
+              ? "border-[var(--primary)]/35 bg-[var(--primary)]/[0.06] text-[var(--primary)]"
               : "border-[#FF5C5C]/35 bg-[#FF5C5C]/[0.06] text-[#FF5C5C]")
           }
         >
@@ -308,8 +308,8 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
         </p>
       )}
 
-      <p className="flex items-center gap-2 text-[0.78rem] leading-[1.6] text-[#A7A7A7]">
-        <Lock size={13} className="shrink-0 text-[#51FF73]" aria-hidden="true" />
+      <p className="flex items-center gap-2 text-[0.78rem] leading-[1.6] text-[var(--text-body)]">
+        <Lock size={13} className="shrink-0 text-[var(--primary)]" aria-hidden="true" />
         We respect your privacy. Your information is safe with us.
       </p>
     </form>

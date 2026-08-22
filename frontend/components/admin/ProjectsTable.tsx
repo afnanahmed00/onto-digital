@@ -40,7 +40,7 @@ function StatusPill({ published, onClick }: { published: boolean; onClick: () =>
 function Thumbnail({ imageUrl, size }: { imageUrl: string; size: number }) {
   return (
     <div
-      className="relative shrink-0 overflow-hidden rounded-[var(--radius-sm)] border border-[var(--border)] bg-[#0A0A0A]"
+      className="relative shrink-0 overflow-hidden rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--background-secondary)]"
       style={{ height: size, width: size }}
     >
       {imageUrl ? (

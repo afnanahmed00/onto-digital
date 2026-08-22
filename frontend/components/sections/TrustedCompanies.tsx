@@ -9,7 +9,7 @@ export default function TrustedCompanies() {
 ];
 
   return (
-    <section className="relative block h-10 border-y border-[#323232] bg-[#242424] md:h-[100px]">
+    <section className="relative block h-10 border-y border-[var(--border-card)] bg-[#242424] md:h-[100px]">
       <div className="mx-auto flex h-full max-w-[1440px] items-center overflow-hidden px-5 sm:px-8 lg:px-10 xl:px-10">
       
 

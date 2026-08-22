@@ -37,9 +37,9 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
       rel="noopener noreferrer"
       aria-label={`View ${project.name} — opens in a new tab`}
       className={clsx(
-        "group relative flex h-full w-full flex-col overflow-hidden rounded-[20px] border border-[#262626] bg-[#050505] transition-all duration-500 hover:border-[#51FF73] hover:shadow-[0_0_30px_rgba(81,255,115,0.15)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#51FF73] focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+        "group relative flex h-full w-full flex-col overflow-hidden rounded-[20px] border border-[var(--border-card)] bg-[var(--card)] transition-all duration-500 hover:border-[var(--primary)] hover:shadow-[0_0_30px_rgba(81,255,115,0.15)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]",
         SIZE_SPAN_CLASSES[project.size],
-        project.featured && "ring-1 ring-[#51FF73]/35"
+        project.featured && "ring-1 ring-[var(--primary)]/35"
       )}
     >
       <Image
@@ -54,12 +54,12 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
 
       {/* Hover-only darken, on top of the blur, so the info panel reads clearly */}
-      <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/55 group-focus-visible:bg-black/55" />
+      <div className="pointer-events-none absolute inset-0 bg-[var(--background)]/0 transition-colors duration-300 group-hover:bg-[var(--background)]/55 group-focus-visible:bg-[var(--background)]/55" />
 
       {/* Decorative "+" badge — only ever shown alongside the hover overlay, never a separate control (the whole card is the one link) */}
       <span
         aria-hidden="true"
-        className="absolute right-4 top-4 z-10 flex h-8 w-8 -translate-y-1 items-center justify-center rounded-full bg-[#51FF73] text-black opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100"
+        className="absolute right-4 top-4 z-10 flex h-8 w-8 -translate-y-1 items-center justify-center rounded-full bg-[var(--primary)] text-black opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100"
       >
         <Plus size={16} strokeWidth={2.5} />
       </span>
@@ -75,7 +75,7 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
         <div className="min-w-0">
           <span
             className={clsx(
-              "block truncate font-heading font-medium uppercase tracking-[0.12em] text-[#51FF73]",
+              "block truncate font-heading font-medium uppercase tracking-[0.12em] text-[var(--primary)]",
               large
                 ? "text-[0.7rem] sm:text-[0.78rem] sm:tracking-[0.14em] lg:text-[0.85rem]"
                 : "text-[0.6rem] sm:text-[0.65rem] sm:tracking-[0.14em] lg:text-[0.68rem]"
@@ -97,7 +97,7 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
 
         <ArrowUpRight
           size={large ? 20 : 16}
-          className={clsx("shrink-0 text-[#51FF73]", large ? "sm:h-[24px] sm:w-[24px]" : "sm:h-[18px] sm:w-[18px]")}
+          className={clsx("shrink-0 text-[var(--primary)]", large ? "sm:h-[24px] sm:w-[24px]" : "sm:h-[18px] sm:w-[18px]")}
           aria-hidden="true"
         />
       </div>
@@ -111,7 +111,7 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
       >
         <span
           className={clsx(
-            "inline-flex w-fit items-center rounded-md bg-[#51FF73]/15 font-medium uppercase tracking-[0.1em] text-[#51FF73]",
+            "inline-flex w-fit items-center rounded-md bg-[var(--primary)]/15 font-medium uppercase tracking-[0.1em] text-[var(--primary)]",
             large ? "px-3 py-1.5 text-[0.75rem]" : "px-2.5 py-1 text-[0.65rem]"
           )}
         >
@@ -129,7 +129,7 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
 
         <p
           className={clsx(
-            "mt-2 line-clamp-2 leading-[1.6] text-[#A7A7A7]",
+            "mt-2 line-clamp-2 leading-[1.6] text-[var(--text-body)]",
             large ? "text-[0.95rem] lg:text-[1rem]" : "text-[0.82rem]"
           )}
         >
@@ -138,7 +138,7 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
 
         <span
           className={clsx(
-            "mt-4 inline-flex items-center gap-2 font-heading font-medium uppercase tracking-[0.1em] text-[#51FF73]",
+            "mt-4 inline-flex items-center gap-2 font-heading font-medium uppercase tracking-[0.1em] text-[var(--primary)]",
             large ? "text-[0.85rem]" : "text-[0.72rem]"
           )}
         >

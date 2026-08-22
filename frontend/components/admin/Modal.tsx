@@ -27,7 +27,7 @@ export default function Modal({ title, onClose, children, maxWidthClassName = "m
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center overflow-y-auto p-4 sm:p-6">
-      <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
+      <div className="absolute inset-0 bg-[var(--background)]/75 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
 
       <div
         role="dialog"

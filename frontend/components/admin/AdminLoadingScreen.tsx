@@ -13,7 +13,7 @@ export default function AdminLoadingScreen({ label = "Loading…" }: { label?: s
     <div
       role="status"
       aria-live="polite"
-      className="flex min-h-screen w-full flex-col items-center justify-center gap-8 bg-black px-5 text-center"
+      className="flex min-h-screen w-full flex-col items-center justify-center gap-8 bg-[var(--background)] px-5 text-center"
     >
       <Logo iconClassName="h-9 w-9" textClassName="text-[1rem]" />
 

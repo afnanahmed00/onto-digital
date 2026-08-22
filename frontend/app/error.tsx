@@ -25,7 +25,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-6 bg-black px-5 py-20 text-center">
+    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-6 bg-[var(--background)] px-5 py-20 text-center">
       <Logo />
 
       <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
@@ -36,7 +36,7 @@ export default function Error({
         Something Went Wrong.
       </h1>
 
-      <p className="max-w-[28rem] text-[0.85rem] leading-[1.9] text-[#A7A7A7] sm:text-[0.95rem]">
+      <p className="max-w-[28rem] text-[0.85rem] leading-[1.9] text-[var(--text-body)] sm:text-[0.95rem]">
         We hit an unexpected error while loading this page. Please try again,
         or head back to the homepage.
       </p>

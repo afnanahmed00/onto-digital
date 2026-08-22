@@ -15,13 +15,13 @@ export type ProcessProps = {
 
 export default function Process({ badge, heading, description, steps }: ProcessProps) {
     return (
-        <section id="process" className="border-t border-[#1f1f1f] bg-black">
+        <section id="process" className="border-t border-[var(--border)] bg-[var(--background)]">
            <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-12 sm:px-8 sm:py-14 lg:flex-row lg:gap-12 lg:px-10 lg:py-14 xl:px-10">
 
                 {/* Left */}
                 <div className="flex w-full max-w-[22rem] flex-col justify-center lg:sticky lg:top-32 lg:self-start">
 
-                    <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+                    <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
                         {badge}
                     </span>
 
@@ -29,7 +29,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                         {heading}
                     </h2>
 
-                    <p className="mt-5 max-w-[20rem] text-[1rem] leading-[1.65] text-[#9A9A9A] sm:mt-6 sm:text-[0.95rem] lg:text-[1rem] lg:leading-[1.7]">
+                    <p className="mt-5 max-w-[20rem] text-[1rem] leading-[1.65] text-[var(--text-body)] sm:mt-6 sm:text-[0.95rem] lg:text-[1rem] lg:leading-[1.7]">
                         {description}
                     </p>
 
@@ -57,12 +57,12 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                                             className="absolute left-3 top-1/2 h-[2px] w-[calc(100%+2rem)] -translate-y-1/2"
                                             style={{
                                                 background:
-                                                    "linear-gradient(90deg,#090909 0%,#18351d 45%,#51FF73 100%)",
+                                                    "linear-gradient(90deg,#090909 0%,#18351d 45%,var(--primary) 100%)",
                                             }}
                                         />
                                     )}
 
-                                    <div className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full border border-[#51FF73] bg-black">
+                                    <div className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full border border-[var(--primary)] bg-[var(--background)]">
                                         <div
                                             className={`rounded-full bg-white ${index === steps.length - 1
                                                 ? "h-3 w-3 animate-pulse"
@@ -77,7 +77,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                                     {item.title}
                                 </h3>
 
-                                <p className="mt-5 text-[0.9rem] leading-[1.8] text-[#A7A7A7]">
+                                <p className="mt-5 text-[0.9rem] leading-[1.8] text-[var(--text-body)]">
                                     {item.description}
                                 </p>
 
@@ -89,7 +89,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                     {/* Mobile */}
                     <div className="relative flex flex-col gap-14 lg:hidden">
 
-                        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#0a0a0a] via-[#1d5d2f] to-[#51FF73]" />
+                        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#0a0a0a] via-[#1d5d2f] to-[var(--primary)]" />
 
                         {steps.map((item, index) => {
                             const contentRight = index % 2 === 0;
@@ -109,7 +109,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                                                         {item.title}
                                                     </h3>
 
-                                                    <p className="mt-2 text-[0.78rem] leading-6 text-[#A7A7A7]">
+                                                    <p className="mt-2 text-[0.78rem] leading-6 text-[var(--text-body)]">
                                                         {item.description}
                                                     </p>
                                                 </>
@@ -122,7 +122,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                                     </div>
 
                                     {/* Center */}
-                                    <div className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full border border-[#51FF73] bg-black">
+                                    <div className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full border border-[var(--primary)] bg-[var(--background)]">
 
                                         <div
                                             className={`rounded-full bg-white ${isLast
@@ -142,7 +142,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                                                         {item.title}
                                                     </h3>
 
-                                                    <p className="mt-2 text-[0.78rem] leading-6 text-[#A7A7A7]">
+                                                    <p className="mt-2 text-[0.78rem] leading-6 text-[var(--text-body)]">
                                                         {item.description}
                                                     </p>
                                                 </>

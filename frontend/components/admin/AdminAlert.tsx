@@ -21,7 +21,7 @@ export default function AdminAlert({ type, message, onDismiss }: AdminAlertProps
       className={clsx(
         "flex items-center gap-2 rounded-xl border px-4 py-3 text-[0.85rem] leading-[1.6]",
         isSuccess
-          ? "border-[#51FF73]/35 bg-[#51FF73]/[0.06] text-[#51FF73]"
+          ? "border-[var(--primary)]/35 bg-[var(--primary)]/[0.06] text-[var(--primary)]"
           : "border-[#FF5C5C]/35 bg-[#FF5C5C]/[0.06] text-[#FF5C5C]"
       )}
     >

@@ -70,7 +70,7 @@ export default function ProjectImageUploader({
       </span>
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-        <div className="relative h-32 w-full shrink-0 overflow-hidden rounded-[var(--radius-md)] border border-[var(--border)] bg-[#0A0A0A] sm:w-48">
+        <div className="relative h-32 w-full shrink-0 overflow-hidden rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background-secondary)] sm:w-48">
           {value ? (
             <Image src={value} alt="Project preview" fill sizes="192px" className="object-cover" />
           ) : (
@@ -80,7 +80,7 @@ export default function ProjectImageUploader({
           )}
 
           {isUploading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/70">
+            <div className="absolute inset-0 flex items-center justify-center bg-[var(--background)]/70">
               <span
                 aria-hidden="true"
                 className="h-6 w-6 animate-spin rounded-full border-2 border-[var(--primary)]/30 border-t-[var(--primary)]"

@@ -6,18 +6,25 @@
    --font-body: "Inter", sans-serif;
 
   --background: #050505;
+  --background-secondary: #0a0a0a;
   --surface: #101010;
   --surface-light: #181818;
 
-  --primary: #39ff14;
+  --card: #111111;
+  --card-hover: #151a16;
 
+  --primary: #51ff73;
+
+  --heading: #ffffff;
   --text-primary: #ffffff;
   --text-secondary: #b8b8b8;
-  --text-muted: #7a7a7a;
+  --text-body: #a7a7a7;
+  --text-muted: #6b6b6b;
 
-  --border: rgba(255, 255, 255, 0.08);
+  --border: #1f1f1f;
+  --border-card: #262626;
 
-  --success: #39ff14;
+  --success: #51ff73;
   --error: #ff4d4f;
 
   --container-width: 1320px;

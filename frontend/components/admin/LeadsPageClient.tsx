@@ -21,7 +21,7 @@ const PAGE_SIZE = 20;
 const EMPTY_PAGINATION: LeadPagination = { page: 1, limit: PAGE_SIZE, total: 0, totalPages: 1 };
 
 const selectStyles =
-  "h-10 appearance-none rounded-[var(--radius-sm)] border border-[var(--border)] bg-[#0A0A0A] py-2 pl-9 pr-8 font-sans text-sm text-white transition-colors duration-300 hover:border-[#51FF73] focus:border-[#51FF73] focus:outline-none";
+  "h-10 appearance-none rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--background-secondary)] py-2 pl-9 pr-8 font-sans text-sm text-white transition-colors duration-300 hover:border-[var(--primary)] focus:border-[var(--primary)] focus:outline-none";
 
 /**
  * /admin/leads — read/filter/sort/paginate/edit/delete against the backend
@@ -206,7 +206,7 @@ export default function LeadsPageClient() {
             size={15}
             strokeWidth={1.75}
             aria-hidden="true"
-            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#6B6B6B] transition-colors duration-300 group-focus-within:text-[#51FF73]"
+            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)] transition-colors duration-300 group-focus-within:text-[var(--primary)]"
           />
           <select
             aria-label="Filter by status"
@@ -214,11 +214,11 @@ export default function LeadsPageClient() {
             onChange={(event) => handleStatusFilterChange(event.target.value as LeadStatus | "")}
             className={selectStyles}
           >
-            <option value="" className="bg-[#0A0A0A] text-white">
+            <option value="" className="bg-[var(--background-secondary)] text-white">
               All Statuses
             </option>
             {LEAD_STATUSES.map((option) => (
-              <option key={option} value={option} className="bg-[#0A0A0A] text-white">
+              <option key={option} value={option} className="bg-[var(--background-secondary)] text-white">
                 {formatLeadStatusLabel(option)}
               </option>
             ))}
@@ -227,7 +227,7 @@ export default function LeadsPageClient() {
             size={14}
             strokeWidth={1.75}
             aria-hidden="true"
-            className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#6B6B6B]"
+            className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]"
           />
         </div>
 
@@ -236,7 +236,7 @@ export default function LeadsPageClient() {
             size={15}
             strokeWidth={1.75}
             aria-hidden="true"
-            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#6B6B6B] transition-colors duration-300 group-focus-within:text-[#51FF73]"
+            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)] transition-colors duration-300 group-focus-within:text-[var(--primary)]"
           />
           <select
             aria-label="Sort by date"
@@ -244,10 +244,10 @@ export default function LeadsPageClient() {
             onChange={(event) => handleSortChange(event.target.value as LeadSort)}
             className={selectStyles}
           >
-            <option value="newest" className="bg-[#0A0A0A] text-white">
+            <option value="newest" className="bg-[var(--background-secondary)] text-white">
               Newest First
             </option>
-            <option value="oldest" className="bg-[#0A0A0A] text-white">
+            <option value="oldest" className="bg-[var(--background-secondary)] text-white">
               Oldest First
             </option>
           </select>
@@ -255,7 +255,7 @@ export default function LeadsPageClient() {
             size={14}
             strokeWidth={1.75}
             aria-hidden="true"
-            className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#6B6B6B]"
+            className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]"
           />
         </div>
       </div>

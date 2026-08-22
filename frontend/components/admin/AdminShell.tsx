@@ -22,7 +22,7 @@ export default function AdminShell({ children }: { children: ReactNode }) {
       {mobileNavOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div
-            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            className="absolute inset-0 bg-[var(--background)]/70 backdrop-blur-sm"
             onClick={() => setMobileNavOpen(false)}
             aria-hidden="true"
           />

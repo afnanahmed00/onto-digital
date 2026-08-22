@@ -40,7 +40,7 @@ export default function AboutPage() {
             <br />
             WE SOLVE
             <br />
-            <span className="text-[#51FF73]">PROBLEMS</span>
+            <span className="text-[var(--primary)]">PROBLEMS</span>
           </>
         }
         description="We combine strategy, creativity and technology to deliver solutions that make a real difference."

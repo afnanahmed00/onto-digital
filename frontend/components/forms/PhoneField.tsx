@@ -22,7 +22,7 @@ type PhoneFieldProps = {
 // Shares the site's field look (border, background, hover/focus green) with
 // FormField so the combined control reads as one continuous input.
 const fieldStyles =
-  "rounded-xl border bg-[#0A0A0A] font-sans text-[0.9rem] text-white transition-colors duration-300 hover:border-[#51FF73] focus:border-[#51FF73] focus:outline-none";
+  "rounded-xl border bg-[var(--background-secondary)] font-sans text-[0.9rem] text-white transition-colors duration-300 hover:border-[var(--primary)] focus:border-[var(--primary)] focus:outline-none";
 
 /**
  * Country-code selector + local phone number input, styled to match
@@ -41,7 +41,7 @@ export default function PhoneField({
   required,
   invalid,
 }: PhoneFieldProps) {
-  const borderStyles = invalid ? "border-[#FF5C5C]" : "border-[#262626]";
+  const borderStyles = invalid ? "border-[#FF5C5C]" : "border-[var(--border-card)]";
 
   return (
     <div className="flex flex-col">
@@ -71,7 +71,7 @@ export default function PhoneField({
                 key={country.iso2}
                 value={country.iso2}
                 title={country.name}
-                className="bg-[#0A0A0A] text-white"
+                className="bg-[var(--background-secondary)] text-white"
               >
                 {country.flag} +{country.dialCode}
               </option>
@@ -82,7 +82,7 @@ export default function PhoneField({
             size={14}
             strokeWidth={1.75}
             aria-hidden="true"
-            className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[#6B6B6B] transition-colors duration-300 group-focus-within:text-[#51FF73]"
+            className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[var(--text-muted)] transition-colors duration-300 group-focus-within:text-[var(--primary)]"
           />
         </div>
 
@@ -91,7 +91,7 @@ export default function PhoneField({
             size={18}
             strokeWidth={1.75}
             aria-hidden="true"
-            className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-[#6B6B6B] transition-colors duration-300 group-focus-within:text-[#51FF73]"
+            className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-[var(--text-muted)] transition-colors duration-300 group-focus-within:text-[var(--primary)]"
           />
 
           <input

@@ -2,24 +2,32 @@
 
   /* Background */
   --background: #050505;
+  --background-secondary: #0A0A0A;
   --surface: #101010;
   --surface-light: #181818;
 
+  /* Cards */
+  --card: #111111;
+  --card-hover: #151A16;
+
   /* Brand */
-  --primary: #39FF14;
+  --primary: #51FF73;
   --primary-hover: #2EE611;
-  --primary-glow: rgba(57,255,20,.35);
+  --primary-glow: rgba(81,255,115,.35);
 
   /* Text */
+  --heading: #FFFFFF;
   --text-primary: #FFFFFF;
   --text-secondary: #B8B8B8;
-  --text-muted: #7A7A7A;
+  --text-body: #A7A7A7;
+  --text-muted: #6B6B6B;
 
   /* Border */
-  --border: rgba(255,255,255,.08);
+  --border: #1F1F1F;
+  --border-card: #262626;
 
   /* Status */
-  --success: #39FF14;
+  --success: #51FF73;
   --error: #FF4D4F;
   --warning: #FFC107;
 

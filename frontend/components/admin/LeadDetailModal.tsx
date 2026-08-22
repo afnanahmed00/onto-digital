@@ -131,12 +131,12 @@ export default function LeadDetailModal({
                 onChange={(event) => onStatusChange(event.target.value as LeadStatus)}
                 aria-label="Lead status"
                 className={clsx(
-                  "h-9 appearance-none rounded-full border bg-[#0A0A0A] pl-3 pr-8 text-[0.7rem] font-medium uppercase tracking-[0.06em] transition-colors duration-300 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60",
+                  "h-9 appearance-none rounded-full border bg-[var(--background-secondary)] pl-3 pr-8 text-[0.7rem] font-medium uppercase tracking-[0.06em] transition-colors duration-300 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60",
                   leadStatusBadgeClassName(lead.status)
                 )}
               >
                 {LEAD_STATUSES.map((statusOption) => (
-                  <option key={statusOption} value={statusOption} className="bg-[#0A0A0A] text-white">
+                  <option key={statusOption} value={statusOption} className="bg-[var(--background-secondary)] text-white">
                     {formatLeadStatusLabel(statusOption)}
                   </option>
                 ))}

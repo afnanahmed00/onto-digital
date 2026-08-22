@@ -50,7 +50,7 @@ export default function FloatingNav() {
               className={clsx(
                 "flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2.5 transition-all duration-300 sm:gap-2 sm:px-4 sm:py-3",
                 active
-                  ? "bg-[#5CFF72] text-black"
+                  ? "bg-[var(--primary)] text-black"
                   : "text-white hover:bg-white/10"
               )}
             >

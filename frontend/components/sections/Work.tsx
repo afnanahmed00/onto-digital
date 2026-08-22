@@ -23,7 +23,7 @@ export default async function Work() {
   if (projects.length === 0) return null;
 
   return (
-    <section className="border-t border-[#1f1f1f] bg-black">
+    <section className="border-t border-[var(--border)] bg-[var(--background)]">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-10 sm:px-8 sm:py-11 lg:gap-12 lg:px-10 lg:py-12 xl:px-10">
 
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start">
@@ -31,7 +31,7 @@ export default async function Work() {
           {/* Left Content */}
          <div className="flex w-full max-w-[20rem] flex-col justify-center text-left shrink-0">
 
-            <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+            <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
               OUR WORK
             </span>
 
@@ -43,7 +43,7 @@ export default async function Work() {
               IMPACT
             </h2>
 
-            <p className="mt-6 max-w-[20rem] text-[1rem] leading-[1.8] text-[#A7A7A7] lg:text-[1rem]">
+            <p className="mt-6 max-w-[20rem] text-[1rem] leading-[1.8] text-[var(--text-body)] lg:text-[1rem]">
               Explore a selection of our recent projects that helped brands
               grow, engage and lead.
             </p>
@@ -72,7 +72,7 @@ export default async function Work() {
 
           <Link
             href="/projects"
-            className="group flex items-center gap-4 font-heading text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]"
+            className="group flex items-center gap-4 font-heading text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[var(--primary)]"
           >
             VIEW ALL CASE STUDIES
 

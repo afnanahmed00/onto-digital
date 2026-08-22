@@ -58,7 +58,7 @@ export default function ProjectGallery() {
   const isLoading = !hasError && projects === null;
 
   return (
-    <section className="border-t border-[#1f1f1f] bg-black">
+    <section className="border-t border-[var(--border)] bg-[var(--background)]">
       <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14 xl:px-10">
         {!isLoading && !hasError && projects && projects.length > 0 && (
           <ProjectFilters
@@ -98,11 +98,11 @@ export default function ProjectGallery() {
 
 function StatusMessage({ title, description }: { title: string; description: string }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-2 rounded-[20px] border border-[#262626] bg-[#050505] px-6 py-20 text-center">
+    <div className="flex flex-col items-center justify-center gap-2 rounded-[20px] border border-[var(--border-card)] bg-[var(--card)] px-6 py-20 text-center">
       <p className="font-heading text-[1rem] font-medium uppercase tracking-[0.08em] text-white">
         {title}
       </p>
-      <p className="text-[0.85rem] text-[#A7A7A7]">{description}</p>
+      <p className="text-[0.85rem] text-[var(--text-body)]">{description}</p>
     </div>
   );
 }
@@ -117,7 +117,7 @@ function GallerySkeleton() {
         <div
           key={index}
           className={clsx(
-            "h-full w-full animate-pulse rounded-[20px] border border-[#262626] bg-[#0A0A0A]",
+            "h-full w-full animate-pulse rounded-[20px] border border-[var(--border-card)] bg-[var(--background-secondary)]",
             isWide && "sm:col-span-2"
           )}
         />

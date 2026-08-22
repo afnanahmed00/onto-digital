@@ -59,7 +59,7 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-black px-5 py-16">
+    <div className="flex min-h-screen w-full items-center justify-center bg-[var(--background)] px-5 py-16">
       <div className="w-full max-w-[26rem] rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-8 sm:p-10">
         <div className="flex flex-col items-center text-center">
           <Logo />
