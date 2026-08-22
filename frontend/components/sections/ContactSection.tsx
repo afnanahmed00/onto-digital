@@ -36,7 +36,7 @@ export default function ContactSection() {
             {/* Top glow */}
             <div className="pointer-events-none absolute left-1/2 top-0 h-20 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#51FF73]/25 opacity-70 blur-2xl sm:h-24 sm:w-52" />
 
-            <h2 className="relative font-[var(--font-heading)] text-[1.3rem] font-medium uppercase leading-tight text-white sm:text-[1.5rem]">
+            <h2 className="relative text-[1.3rem] font-medium uppercase leading-tight text-white sm:text-[1.5rem]">
               SEND US A MESSAGE
             </h2>
 
@@ -55,7 +55,7 @@ export default function ContactSection() {
             {/* Top glow */}
             <div className="pointer-events-none absolute left-1/2 top-0 h-20 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#51FF73]/25 opacity-70 blur-2xl sm:h-24 sm:w-52" />
 
-            <h2 className="relative font-[var(--font-heading)] text-[1.3rem] font-medium uppercase leading-tight text-white sm:text-[1.5rem]">
+            <h2 className="relative text-[1.3rem] font-medium uppercase leading-tight text-white sm:text-[1.5rem]">
               CONTACT INFORMATION
             </h2>
 
@@ -67,7 +67,7 @@ export default function ContactSection() {
                   </span>
 
                   <span className="flex flex-col">
-                    <span className="font-[var(--font-heading)] text-[0.78rem] font-medium uppercase tracking-[0.12em] text-white">
+                    <span className="font-heading text-[0.78rem] font-medium uppercase tracking-[0.12em] text-white">
                       {title}
                     </span>
 

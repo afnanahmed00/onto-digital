@@ -75,7 +75,7 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
         <div className="min-w-0">
           <span
             className={clsx(
-              "block truncate font-[var(--font-heading)] font-medium uppercase tracking-[0.12em] text-[#51FF73]",
+              "block truncate font-heading font-medium uppercase tracking-[0.12em] text-[#51FF73]",
               large
                 ? "text-[0.7rem] sm:text-[0.78rem] sm:tracking-[0.14em] lg:text-[0.85rem]"
                 : "text-[0.6rem] sm:text-[0.65rem] sm:tracking-[0.14em] lg:text-[0.68rem]"
@@ -85,7 +85,7 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
           </span>
           <span
             className={clsx(
-              "mt-1 block truncate font-[var(--font-heading)] font-medium uppercase text-white",
+              "mt-1 block truncate font-heading font-medium uppercase text-white",
               large
                 ? "text-[1rem] sm:text-[1.15rem] lg:text-[1.3rem]"
                 : "text-[0.85rem] sm:text-[0.95rem] lg:text-[1.05rem]"
@@ -120,7 +120,7 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
 
         <span
           className={clsx(
-            "mt-3 font-[var(--font-heading)] font-semibold uppercase text-white",
+            "mt-3 font-heading font-semibold uppercase text-white",
             large ? "text-[1.4rem] lg:text-[1.6rem]" : "text-[1.15rem]"
           )}
         >
@@ -138,7 +138,7 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
 
         <span
           className={clsx(
-            "mt-4 inline-flex items-center gap-2 font-[var(--font-heading)] font-medium uppercase tracking-[0.1em] text-[#51FF73]",
+            "mt-4 inline-flex items-center gap-2 font-heading font-medium uppercase tracking-[0.1em] text-[#51FF73]",
             large ? "text-[0.85rem]" : "text-[0.72rem]"
           )}
         >

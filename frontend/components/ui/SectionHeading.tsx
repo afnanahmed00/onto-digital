@@ -15,7 +15,7 @@ export default function SectionHeading({
         {label}
       </span>
 
-      <h2 className="mb-5 font-[var(--font-heading)] text-4xl font-semibold text-white">
+      <h2 className="mb-5 text-4xl font-semibold text-white">
         {title}
       </h2>
 

@@ -34,7 +34,7 @@ export default function StatCard({ label, icon: Icon, value, status }: StatCardP
 
       {status === "error" && (
         <p
-          className="mt-4 font-[var(--font-heading)] text-3xl font-semibold text-[var(--text-muted)]"
+          className="mt-4 font-heading text-3xl font-semibold text-[var(--text-muted)]"
           aria-label={`${label}: unavailable`}
         >
           —
@@ -42,7 +42,7 @@ export default function StatCard({ label, icon: Icon, value, status }: StatCardP
       )}
 
       {status === "loaded" && (
-        <p className="mt-4 font-[var(--font-heading)] text-3xl font-semibold text-white">
+        <p className="mt-4 font-heading text-3xl font-semibold text-white">
           {value.toLocaleString("en-US")}
         </p>
       )}

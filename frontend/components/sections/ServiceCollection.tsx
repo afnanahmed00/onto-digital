@@ -16,11 +16,11 @@ export default async function ServiceCollection() {
     <section className="border-t border-[#1f1f1f] bg-black">
       <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16 xl:px-10">
 
-        <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+        <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
           WHAT WE DO
         </span>
 
-        <h2 className="mt-2 max-w-[38rem] font-[var(--font-heading)] text-[2rem] font-medium uppercase leading-[1.08] sm:text-[2.5rem]">
+        <h2 className="mt-2 max-w-[38rem] text-[2rem] font-medium uppercase leading-[1.08] sm:text-[2.5rem]">
           SERVICES BUILT TO
           <br />
           ELEVATE YOUR BUSINESS
@@ -50,7 +50,7 @@ export default async function ServiceCollection() {
                   <Icon size={20} />
                 </div>
 
-                <h3 className="relative mt-5 font-[var(--font-heading)] text-[1rem] font-medium uppercase leading-[1.2] text-white sm:text-[1.1rem]">
+                <h3 className="relative mt-5 text-[1rem] font-medium uppercase leading-[1.2] text-white sm:text-[1.1rem]">
                   {service.breadcrumbLabel.toUpperCase()}
                 </h3>
 
@@ -60,7 +60,7 @@ export default async function ServiceCollection() {
 
                 <Link
                   href={`/services/${service.slug}`}
-                  className="group/link relative mt-6 flex items-center gap-2 self-start font-[var(--font-heading)] text-[0.72rem] font-medium uppercase tracking-[0.1em] text-[#51FF73]"
+                  className="group/link relative mt-6 flex items-center gap-2 self-start font-heading text-[0.72rem] font-medium uppercase tracking-[0.1em] text-[#51FF73]"
                 >
                   LEARN MORE
                   <ArrowUpRight
@@ -82,7 +82,7 @@ export default async function ServiceCollection() {
 function StatusMessage({ title, description }: { title: string; description: string }) {
   return (
     <div className="mt-10 flex flex-col items-center justify-center gap-2 rounded-[20px] border border-[#262626] bg-[#050505] px-6 py-20 text-center sm:mt-12">
-      <p className="font-[var(--font-heading)] text-[1rem] font-medium uppercase tracking-[0.08em] text-white">
+      <p className="font-heading text-[1rem] font-medium uppercase tracking-[0.08em] text-white">
         {title}
       </p>
       <p className="text-[0.85rem] text-[#A7A7A7]">{description}</p>

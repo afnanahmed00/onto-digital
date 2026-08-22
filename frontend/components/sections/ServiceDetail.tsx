@@ -37,11 +37,11 @@ export default function ServiceDetail({ service }: { service: Service }) {
 
           {/* Left — service info */}
           <div>
-            <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+            <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
               {service.badge}
             </span>
 
-            <h1 className="mt-2 font-[var(--font-heading)] text-[2rem] font-medium uppercase leading-[1.05] sm:text-[3rem] lg:text-[3rem]">
+            <h1 className="mt-2 text-[2rem] font-medium uppercase leading-[1.05] sm:text-[3rem] lg:text-[3rem]">
               {service.titleLines[0]}
               <br />
               <span className="text-[#51FF73]">{service.titleLines[1]}</span>
@@ -62,7 +62,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#262626] bg-[#0A0A0A] text-[#51FF73]">
                     <FeatureIcon size={20} strokeWidth={1.75} aria-hidden="true" />
                   </span>
-                  <span className="font-[var(--font-heading)] text-[0.85rem] font-medium uppercase leading-tight text-white">
+                  <span className="font-heading text-[0.85rem] font-medium uppercase leading-tight text-white">
                     {label}
                   </span>
                 </div>
@@ -74,7 +74,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
               <div className="relative mt-10 overflow-hidden rounded-[20px] border border-[#262626] bg-[#050505] p-6 sm:p-7">
                 <div className="pointer-events-none absolute left-1/2 top-0 h-16 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#51FF73]/25 opacity-70 blur-2xl" />
 
-                <h2 className="relative font-[var(--font-heading)] text-[1rem] font-medium uppercase leading-tight text-white sm:text-[1.1rem]">
+                <h2 className="relative text-[1rem] font-medium uppercase leading-tight text-white sm:text-[1.1rem]">
                   What You Get
                 </h2>
 
@@ -99,7 +99,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
             {/* Technologies */}
             {service.technologies && service.technologies.length > 0 && (
               <div className="mt-8">
-                <h2 className="font-[var(--font-heading)] text-[0.78rem] font-medium uppercase tracking-[0.12em] text-white">
+                <h2 className="text-[0.78rem] font-medium uppercase tracking-[0.12em] text-white">
                   Technologies We Use
                 </h2>
 
@@ -121,7 +121,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
           <div className="relative overflow-hidden rounded-[20px] border border-[#262626] bg-[#050505] p-6 sm:rounded-[24px] sm:p-8 lg:p-10">
             <div className="pointer-events-none absolute left-1/2 top-0 h-20 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#51FF73]/25 opacity-70 blur-2xl sm:h-24 sm:w-52" />
 
-            <h2 className="relative font-[var(--font-heading)] text-[1.3rem] font-medium uppercase leading-tight text-white sm:text-[1.5rem]">
+            <h2 className="relative text-[1.3rem] font-medium uppercase leading-tight text-white sm:text-[1.5rem]">
               <span className="text-[#51FF73]">GET QUOTE</span> FOR YOUR PROJECT
             </h2>
 
@@ -141,7 +141,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                 href={whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex h-[48px] items-center justify-center gap-2 rounded-xl border border-[#262626] bg-[#0A0A0A] font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.06em] text-white transition-all duration-300 hover:border-[#51FF73] hover:text-[#51FF73]"
+                className="group flex h-[48px] items-center justify-center gap-2 rounded-xl border border-[#262626] bg-[#0A0A0A] font-heading text-[0.8rem] font-medium uppercase tracking-[0.06em] text-white transition-all duration-300 hover:border-[#51FF73] hover:text-[#51FF73]"
               >
                 <MessageCircle size={17} strokeWidth={1.75} aria-hidden="true" />
                 WhatsApp
@@ -149,7 +149,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
 
               <a
                 href={emailHref}
-                className="group flex h-[48px] items-center justify-center gap-2 rounded-xl border border-[#262626] bg-[#0A0A0A] font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.06em] text-white transition-all duration-300 hover:border-[#51FF73] hover:text-[#51FF73]"
+                className="group flex h-[48px] items-center justify-center gap-2 rounded-xl border border-[#262626] bg-[#0A0A0A] font-heading text-[0.8rem] font-medium uppercase tracking-[0.06em] text-white transition-all duration-300 hover:border-[#51FF73] hover:text-[#51FF73]"
               >
                 <Mail size={17} strokeWidth={1.75} aria-hidden="true" />
                 Email

@@ -25,11 +25,11 @@ export default async function Services() {
 
                 {/* Left Content */}
                 <div className="flex w-full max-w-[22rem] flex-col justify-center  text-left">
-                    <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+                    <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
                         WHAT WE DO
                     </span>
 
-                    <h2 className="mt-2 font-[var(--font-heading)] text-[2rem] sm:text-[2.75rem] font-medium uppercase leading-[1.08]">
+                    <h2 className="mt-2 text-[2rem] sm:text-[2.75rem] font-medium uppercase leading-[1.08]">
                         DIGITAL SOLUTIONS
                         <br />
                         BUILT TO PERFORM
@@ -42,7 +42,7 @@ export default async function Services() {
 
                     <Link
                         href="/services"
-                        className="group mt-5 flex items-center gap-4 font-[var(--font-heading)] text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]"
+                        className="group mt-5 flex items-center gap-4 font-heading text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]"
                     >
                         Explore All Services
                         <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -70,7 +70,7 @@ export default async function Services() {
                                     <Icon size={22} className="hidden sm:block" />
                                 </div>
 
-                                <h3 className="relative mt-4 text-[0.85rem] leading-[1.2] font-[var(--font-heading)] font-medium uppercase text-white sm:mt-6 sm:text-[1.25rem] lg:text-[1.35rem]">
+                                <h3 className="relative mt-4 text-[0.85rem] leading-[1.2] font-medium uppercase text-white sm:mt-6 sm:text-[1.25rem] lg:text-[1.35rem]">
                                     {service.breadcrumbLabel.toUpperCase()}
                                 </h3>
 

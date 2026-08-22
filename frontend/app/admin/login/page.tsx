@@ -68,7 +68,7 @@ export default function AdminLoginPage() {
             Admin Access
           </span>
 
-          <h1 className="mt-3 font-[var(--font-heading)] text-2xl font-semibold uppercase text-white sm:text-[1.75rem]">
+          <h1 className="mt-3 text-2xl font-semibold uppercase text-white sm:text-[1.75rem]">
             Sign In
           </h1>
 

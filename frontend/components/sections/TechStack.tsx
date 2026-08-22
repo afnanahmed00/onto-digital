@@ -134,11 +134,11 @@ export default function TechStack() {
         {/* Heading */}
         <div className="mx-auto flex max-w-[38rem] flex-col items-center text-center">
 
-          <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+          <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
             OUR TECH STACK
           </span>
 
-          <h2 className="mt-2 font-[var(--font-heading)] text-[2rem] font-medium uppercase leading-[1.08] sm:text-[2.5rem]">
+          <h2 className="mt-2 text-[2rem] font-medium uppercase leading-[1.08] sm:text-[2.5rem]">
             TECHNOLOGIES
             <br />
             WE <span className="text-[#51FF73]">BUILD</span> WITH
@@ -255,7 +255,7 @@ export default function TechStack() {
                   />
                 </div>
 
-                <h3 className="mt-2 font-[var(--font-heading)] text-[0.6rem] font-medium uppercase leading-tight text-white sm:mt-3 sm:text-[0.85rem] lg:text-[1rem]">
+                <h3 className="mt-2 text-[0.6rem] font-medium uppercase leading-tight text-white sm:mt-3 sm:text-[0.85rem] lg:text-[1rem]">
                   {active.name}
                 </h3>
 

@@ -99,7 +99,7 @@ export default function ProjectGallery() {
 function StatusMessage({ title, description }: { title: string; description: string }) {
   return (
     <div className="flex flex-col items-center justify-center gap-2 rounded-[20px] border border-[#262626] bg-[#050505] px-6 py-20 text-center">
-      <p className="font-[var(--font-heading)] text-[1rem] font-medium uppercase tracking-[0.08em] text-white">
+      <p className="font-heading text-[1rem] font-medium uppercase tracking-[0.08em] text-white">
         {title}
       </p>
       <p className="text-[0.85rem] text-[#A7A7A7]">{description}</p>

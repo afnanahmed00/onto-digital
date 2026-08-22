@@ -92,11 +92,11 @@ export default function Testimonials() {
 
         {/* Left Content */}
         <div className="flex w-full max-w-[20rem] shrink-0 flex-col justify-center   text-left">
-          <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+          <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
             TESTIMONIALS
           </span>
 
-          <h2 className="mt-2 font-[var(--font-heading)] text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
+          <h2 className="mt-2 text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
             WHAT OUR <span className="text-[#51FF73]">CLIENTS</span> SAY
           </h2>
 
@@ -105,7 +105,7 @@ export default function Testimonials() {
             trust.
           </p>
 
-          <button className="group mt-5 flex items-center gap-4 font-[var(--font-heading)] text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]">
+          <button className="group mt-5 flex items-center gap-4 text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]">
             VIEW ALL TESTIMONIALS
             <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
               ↗
@@ -144,7 +144,7 @@ export default function Testimonials() {
               {slides.map((item, i) => (
                 <div key={`${item.name}-${i}`} className="w-full shrink-0 px-2 sm:w-1/2">
                   <article className="group flex h-full flex-col rounded-[20px] border border-[#262626] bg-[#050505] p-6 transition-colors duration-300 hover:border-[#51FF73] lg:p-7">
-                    <span className="font-[var(--font-heading)] text-[2.5rem] font-bold leading-none text-[#51FF73]">
+                    <span className="font-heading text-[2.5rem] font-bold leading-none text-[#51FF73]">
                       ❝
                     </span>
 
@@ -161,7 +161,7 @@ export default function Testimonials() {
                         className="h-11 w-11 rounded-full object-cover"
                       />
                       <div>
-                        <h3 className="font-[var(--font-heading)] text-[0.95rem] font-medium text-white">
+                        <h3 className="text-[0.95rem] font-medium text-white">
                           {item.name}
                         </h3>
                         <p className="text-[0.8rem] text-[#A7A7A7]">

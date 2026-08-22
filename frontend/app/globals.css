@@ -3,6 +3,7 @@
 
 :root {
    --font-heading: "Orbitron", sans-serif;
+   --font-body: "Inter", sans-serif;
 
   --background: #050505;
   --surface: #101010;
@@ -46,7 +47,7 @@
   body {
     background: var(--background);
     color: var(--text-primary);
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     min-height: 100vh;
   }
 
@@ -70,6 +71,32 @@
   ol {
     list-style: none;
   }
+
+  /*
+   * Site-wide typography split: Orbitron for headings/navigation/buttons/
+   * labels/stats, Inter for everything else (body already defaults to
+   * Inter above). Kept here once so no component has to set a font
+   * class by hand — new headings/nav/buttons/labels pick this up for free.
+   */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  nav,
+  button,
+  label {
+    font-family: var(--font-heading);
+  }
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
 }
 
 
@@ -85,6 +112,7 @@
 
 .animate-marquee {
   animation: marquee 22s linear infinite;
+  font-family: var(--font-heading);
 }
 
 .animate-marquee:hover {

@@ -45,11 +45,11 @@ export default function OurValues() {
     <section className="border-t border-[#1f1f1f] bg-black">
       <div className="mx-auto max-w-[1440px] px-5 py-[50px] sm:px-8 sm:py-16 lg:px-10 lg:py-20 xl:px-10">
 
-        <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+        <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
           OUR VALUES
         </span>
 
-        <h2 className="mt-2 max-w-2xl font-[var(--font-heading)] text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
+        <h2 className="mt-2 max-w-2xl text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
           THE PRINCIPLES THAT
           <br />
           DRIVE EVERYTHING WE DO
@@ -72,7 +72,7 @@ export default function OurValues() {
                 <Icon size={22} strokeWidth={1.75} className="hidden sm:block" />
               </div>
 
-              <h3 className="relative mt-4 font-[var(--font-heading)] text-[0.8rem] font-medium uppercase leading-tight text-white sm:mt-5 sm:text-[1rem]">
+              <h3 className="relative mt-4 text-[0.8rem] font-medium uppercase leading-tight text-white sm:mt-5 sm:text-[1rem]">
                 {title}
               </h3>
 

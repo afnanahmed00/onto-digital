@@ -39,7 +39,7 @@ export default function Modal({ title, onClose, children, maxWidthClassName = "m
         )}
       >
         <div className="flex items-center justify-between border-b border-[var(--border)] px-6 py-4">
-          <h2 className="font-[var(--font-heading)] text-lg font-semibold uppercase tracking-[0.04em] text-white">
+          <h2 className="text-lg font-semibold uppercase tracking-[0.04em] text-white">
             {title}
           </h2>
 

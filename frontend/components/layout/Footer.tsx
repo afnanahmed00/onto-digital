@@ -82,7 +82,7 @@ export default function Footer() {
           {/* Link columns */}
           {FOOTER_COLUMNS.map((col) => (
             <nav key={col.title} aria-label={col.title}>
-              <h3 className="font-[var(--font-heading)] text-sm font-bold uppercase tracking-[0.1em] text-white">
+              <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-white">
                 {col.title}
               </h3>
               <span className="mt-3 block h-[2px] w-6 bg-[var(--primary)]" />
@@ -104,7 +104,7 @@ export default function Footer() {
 
           {/* Let's Connect */}
           <div>
-            <h3 className="font-[var(--font-heading)] text-sm font-bold uppercase tracking-[0.1em] text-white">
+            <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-white">
               Let&apos;s Connect
             </h3>
             <span className="mt-3 block h-[2px] w-6 bg-[var(--primary)]" />

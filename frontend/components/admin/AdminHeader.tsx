@@ -34,7 +34,7 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
 
       <div className="hidden min-w-0 lg:block">
         <p className="text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">Welcome back</p>
-        <p className="truncate font-[var(--font-heading)] text-base font-semibold text-white">
+        <p className="truncate font-heading text-base font-semibold text-white">
           {admin?.name}
         </p>
       </div>

@@ -16,7 +16,7 @@ export default function HeroActions() {
 
       <Link
         href="/projects"
-        className="group hidden items-center gap-3 font-[var(--font-heading)] text-[0.75rem] font-semibold uppercase tracking-[0.15em] text-white transition-colors duration-300 hover:text-[var(--primary)] sm:inline-flex lg:text-sm"
+        className="group hidden items-center gap-3 font-heading text-[0.75rem] font-semibold uppercase tracking-[0.15em] text-white transition-colors duration-300 hover:text-[var(--primary)] sm:inline-flex lg:text-sm"
       >
         View Our Work
 

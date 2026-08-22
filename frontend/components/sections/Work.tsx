@@ -31,11 +31,11 @@ export default async function Work() {
           {/* Left Content */}
          <div className="flex w-full max-w-[20rem] flex-col justify-center text-left shrink-0">
 
-            <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+            <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
               OUR WORK
             </span>
 
-            <h2 className="mt-2 font-[var(--font-heading)] text-[2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
+            <h2 className="mt-2 text-[2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
               DIGITAL PRODUCTS
               <br />
               THAT MAKE AN
@@ -72,7 +72,7 @@ export default async function Work() {
 
           <Link
             href="/projects"
-            className="group flex items-center gap-4 font-[var(--font-heading)] text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]"
+            className="group flex items-center gap-4 font-heading text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#51FF73]"
           >
             VIEW ALL CASE STUDIES
 

@@ -26,7 +26,7 @@ export default function Logo({ className, iconClassName, textClassName }: LogoPr
 
       <span
        className={clsx(
-  "font-[var(--font-heading)] text-[0.8rem] font-bold uppercase tracking-[0.02em] text-white sm:text-[1.125rem] lg:text-[1.25rem]",
+  "font-heading text-[0.8rem] font-bold uppercase tracking-[0.02em] text-white sm:text-[1.125rem] lg:text-[1.25rem]",
   textClassName
 )}
       >

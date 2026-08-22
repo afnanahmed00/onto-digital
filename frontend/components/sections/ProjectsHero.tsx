@@ -8,11 +8,11 @@ export default function ProjectsHero() {
       />
 
       <div className="relative mx-auto flex max-w-[1440px] flex-col items-center px-5 pt-28 pb-10 text-center sm:px-8 sm:pt-28 sm:pb-12 lg:px-10 lg:pt-40 lg:pb-14 xl:px-10">
-        <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+        <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
           OUR WORK
         </span>
 
-        <h1 className="mt-3 font-[var(--font-heading)] text-[2.4rem] font-medium uppercase leading-[1.05] sm:text-[3.2rem] lg:text-[4rem]">
+        <h1 className="mt-3 text-[2.4rem] font-medium uppercase leading-[1.05] sm:text-[3.2rem] lg:text-[4rem]">
           PROJECTS
         </h1>
 

@@ -28,7 +28,7 @@ export default function DashboardRecentLeads({
   return (
     <div className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-6">
       <div className="flex items-center justify-between">
-        <h2 className="font-[var(--font-heading)] text-lg font-semibold uppercase tracking-[0.04em] text-white">
+        <h2 className="text-lg font-semibold uppercase tracking-[0.04em] text-white">
           Recent Leads
         </h2>
         <Link

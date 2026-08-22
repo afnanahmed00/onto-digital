@@ -21,11 +21,11 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                 {/* Left */}
                 <div className="flex w-full max-w-[22rem] flex-col justify-center lg:sticky lg:top-32 lg:self-start">
 
-                    <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+                    <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
                         {badge}
                     </span>
 
-                    <h2 className="mt-2 font-[var(--font-heading)] text-[2rem] sm:text-[2.75rem] lg:text-[2.75rem] font-medium uppercase leading-[1.08]">
+                    <h2 className="mt-2 text-[2rem] sm:text-[2.75rem] lg:text-[2.75rem] font-medium uppercase leading-[1.08]">
                         {heading}
                     </h2>
 
@@ -46,7 +46,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                                 key={item.number}
                                 className="relative flex-1 min-w-0"
                             >
-                                <div className="font-[var(--font-heading)] text-[2.15rem] font-medium leading-none text-white">
+                                <div className="font-heading text-[2.15rem] font-medium leading-none text-white">
                                     {item.number}
                                 </div>
 
@@ -73,7 +73,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
 
                                 </div>
 
-                                <h3 className="font-[var(--font-heading)] text-[1.1rem] font-medium uppercase leading-tight">
+                                <h3 className="text-[1.1rem] font-medium uppercase leading-tight">
                                     {item.title}
                                 </h3>
 
@@ -105,7 +105,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                                         <div className="max-w-[130px] text-right">
                                             {!contentRight ? (
                                                 <>
-                                                    <h3 className="font-[var(--font-heading)] text-[0.9rem] uppercase">
+                                                    <h3 className="text-[0.9rem] uppercase">
                                                         {item.title}
                                                     </h3>
 
@@ -114,7 +114,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                                                     </p>
                                                 </>
                                             ) : (
-                                                <span className="font-[var(--font-heading)] text-xl text-white">
+                                                <span className="font-heading text-xl text-white">
                                                     {item.number}
                                                 </span>
                                             )}
@@ -138,7 +138,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                                         <div className="max-w-[130px]">
                                             {contentRight ? (
                                                 <>
-                                                    <h3 className="font-[var(--font-heading)] text-[0.9rem] uppercase">
+                                                    <h3 className="text-[0.9rem] uppercase">
                                                         {item.title}
                                                     </h3>
 
@@ -147,7 +147,7 @@ export default function Process({ badge, heading, description, steps }: ProcessP
                                                     </p>
                                                 </>
                                             ) : (
-                                                <span className="font-[var(--font-heading)] text-xl text-white">
+                                                <span className="font-heading text-xl text-white">
                                                     {item.number}
                                                 </span>
                                             )}

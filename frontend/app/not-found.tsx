@@ -11,11 +11,11 @@ export default function NotFound() {
     <div className="flex min-h-screen w-full flex-col items-center justify-center gap-6 bg-black px-5 py-20 text-center">
       <Logo />
 
-      <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
+      <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[var(--primary)]">
         404 ERROR
       </span>
 
-      <h1 className="font-[var(--font-heading)] text-[2.4rem] font-medium uppercase leading-[1.05] sm:text-[3.2rem] lg:text-[4rem]">
+      <h1 className="text-[2.4rem] font-medium uppercase leading-[1.05] sm:text-[3.2rem] lg:text-[4rem]">
         PAGE NOT FOUND
       </h1>
 

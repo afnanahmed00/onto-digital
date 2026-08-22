@@ -198,7 +198,7 @@ export default function ServicesPageClient() {
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="font-[var(--font-heading)] text-2xl font-semibold uppercase tracking-[0.04em] text-white sm:text-3xl">
+          <h1 className="text-2xl font-semibold uppercase tracking-[0.04em] text-white sm:text-3xl">
             Services
           </h1>
           <p className="mt-2 text-sm text-[var(--text-secondary)]">

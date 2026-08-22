@@ -34,7 +34,7 @@ export default function ConfirmDialog({
           type="button"
           onClick={onConfirm}
           disabled={isConfirming}
-          className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-md)] border border-[#FF5C5C]/50 bg-[#FF5C5C]/10 px-7 py-[18px] font-[var(--font-heading)] text-sm font-semibold uppercase tracking-[0.15em] text-[#FF5C5C] transition-all duration-300 hover:bg-[#FF5C5C] hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-md)] border border-[#FF5C5C]/50 bg-[#FF5C5C]/10 px-7 py-[18px] text-sm font-semibold uppercase tracking-[0.15em] text-[#FF5C5C] transition-all duration-300 hover:bg-[#FF5C5C] hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isConfirming ? "Deleting..." : confirmLabel}
         </button>

@@ -20,7 +20,6 @@ export default function HeroContent() {
       <h1
         className="
           mt-3
-          font-[var(--font-heading)]
           text-[32px]
           md:text-[40px]
           lg:text-[48px]

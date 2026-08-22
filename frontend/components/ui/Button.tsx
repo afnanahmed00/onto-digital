@@ -16,7 +16,7 @@ interface ButtonProps {
 }
 
 const base =
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-[var(--font-heading)] text-sm font-semibold uppercase tracking-[0.15em] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100 disabled:hover:shadow-none";
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-heading text-sm font-semibold uppercase tracking-[0.15em] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100 disabled:hover:shadow-none";
 
 const variants: Record<ButtonVariant, string> = {
   pill: "rounded-full border border-[var(--primary)]/35 bg-white/[0.03] px-6 py-3 text-white hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-black hover:shadow-[0_0_30px_var(--primary-glow)]",

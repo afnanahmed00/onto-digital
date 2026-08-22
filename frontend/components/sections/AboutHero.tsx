@@ -35,11 +35,11 @@ export default function AboutHero() {
 
           <div>
 
-            <span className="font-[var(--font-heading)] text-[0.82rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+            <span className="font-heading text-[0.82rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
               ABOUT US
             </span>
 
-            <h1 className="mt-2 font-[var(--font-heading)] text-[2.15rem] font-medium uppercase leading-[1.08] lg:text-[3.15rem]">
+            <h1 className="mt-2 text-[2.15rem] font-medium uppercase leading-[1.08] lg:text-[3.15rem]">
               WE BUILD DIGITAL
               <br />
               SOLUTIONS THAT
@@ -65,7 +65,7 @@ export default function AboutHero() {
 
             <Link
               href="/contact"
-              className="group mt-9 inline-flex h-[45px] items-center gap-4 rounded-xl border border-[#51FF73] px-7 font-[var(--font-heading)] text-[0.85rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[#51FF73] hover:text-black"
+              className="group mt-9 inline-flex h-[45px] items-center gap-4 rounded-xl border border-[#51FF73] px-7 font-heading text-[0.85rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[#51FF73] hover:text-black"
             >
               <span className="text-[#51FF73] text-[1rem] transition-all group-hover:text-black">
                 ↗
@@ -107,7 +107,7 @@ export default function AboutHero() {
                     className="flex flex-col items-center px-1 py-4 text-center sm:px-4 sm:py-7"
                   >
 
-                    <h3 className="font-[var(--font-heading)] text-[0.8rem] font-medium text-[#51FF73] sm:text-[1rem] lg:text-[1.8rem]">
+                    <h3 className="text-[0.8rem] font-medium text-[#51FF73] sm:text-[1rem] lg:text-[1.8rem]">
                       {item.value}
                     </h3>
 

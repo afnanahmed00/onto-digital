@@ -74,7 +74,7 @@ function StatCard({ icon: Icon, value, suffix, title, subtitle, index }: Stat & 
         <Icon size={28} strokeWidth={1.75} className="hidden sm:block" />
       </div>
 
-      <h3 className="mt-3 font-[var(--font-heading)] text-[1.6rem] font-bold leading-[1.1] text-white transition-colors duration-300 group-hover:text-[#52FF2A] sm:mt-6 sm:text-[2.5rem]">
+      <h3 className="mt-3 text-[1.6rem] font-bold leading-[1.1] text-white transition-colors duration-300 group-hover:text-[#52FF2A] sm:mt-6 sm:text-[2.5rem]">
         {display}
         {suffix}
       </h3>

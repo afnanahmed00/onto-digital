@@ -33,11 +33,11 @@ export default function FAQ({
 
           <div className="lg:sticky lg:top-28 lg:self-start">
 
-            <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+            <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
               {badge}
             </span>
 
-            <h2 className="mt-2 font-[var(--font-heading)] text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
+            <h2 className="mt-2 text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
               {heading}
             </h2>
 
@@ -67,7 +67,7 @@ export default function FAQ({
                     className="flex w-full items-center justify-between gap-6 p-6 text-left"
                   >
 
-                    <h3 className="font-[var(--font-heading)] text-[0.95rem] font-medium uppercase leading-[1.5] text-white lg:text-[1rem]">
+                    <h3 className="text-[0.95rem] font-medium uppercase leading-[1.5] text-white lg:text-[1rem]">
                       {faq.question}
                     </h3>
 

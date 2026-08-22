@@ -35,11 +35,11 @@ export default function WhyChooseUs({
 
           <div>
 
-            <span className="font-[var(--font-heading)] text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
+            <span className="font-heading text-[0.8rem] font-medium uppercase tracking-[0.18em] text-[#51FF73]">
               {badge}
             </span>
 
-            <h2 className="mt-2 font-[var(--font-heading)] text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
+            <h2 className="mt-2 text-[2.2rem] font-medium uppercase leading-[1.08] sm:text-[2.75rem] lg:text-[2.75rem]">
               {title}
             </h2>
 
@@ -49,7 +49,7 @@ export default function WhyChooseUs({
 
             <Link
               href={buttonHref}
-              className="group mt-9 inline-flex h-[45px] items-center gap-4 rounded-xl border border-[#51FF73] px-7 font-[var(--font-heading)] text-[0.85rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[#51FF73] hover:text-black"
+              className="group mt-9 inline-flex h-[45px] items-center gap-4 rounded-xl border border-[#51FF73] px-7 font-heading text-[0.85rem] font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:bg-[#51FF73] hover:text-black"
             >
               {buttonText}
               <span className="text-[#51FF73] text-[1rem] transition-all group-hover:text-black">
@@ -78,7 +78,7 @@ export default function WhyChooseUs({
                   <Icon size={22} strokeWidth={1.75} className="hidden sm:block" />
                 </div>
 
-                <h3 className="relative mt-4 font-[var(--font-heading)] text-[0.8rem] font-medium uppercase leading-tight text-white sm:mt-5 sm:text-[1rem]">
+                <h3 className="relative mt-4 text-[0.8rem] font-medium uppercase leading-tight text-white sm:mt-5 sm:text-[1rem]">
                   {title}
                 </h3>
 

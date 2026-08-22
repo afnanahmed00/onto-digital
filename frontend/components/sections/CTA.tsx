@@ -41,7 +41,7 @@ export default function CTA() {
 
           <div className="relative flex flex-col items-center gap-8 px-4 py-8 text-center sm:px-6 sm:py-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-10 lg:py-12 lg:text-left">
             <div className="lg:w-[58%]">
-              <h2 className="font-[var(--font-heading)] text-[1.6rem] font-medium uppercase leading-[1.08] sm:text-[1.8rem] lg:text-[2.2rem] xl:text-[2.5rem]">
+              <h2 className="text-[1.6rem] font-medium uppercase leading-[1.08] sm:text-[1.8rem] lg:text-[2.2rem] xl:text-[2.5rem]">
                 READY TO BUILD SOMETHING
                 <br />
                 <span className="text-[#51FF73]">EXTRAORDINARY?</span>
@@ -56,7 +56,7 @@ export default function CTA() {
             <div className="flex justify-center lg:w-[42%] lg:justify-end">
               <Link
                 href="/contact"
-                className="group flex h-[60px] items-center gap-4 rounded-[18px] border border-[#51FF73] bg-black px-8 lg:px-10 font-[var(--font-heading)] text-[0.8rem] lg:text-[0.85rem] font-medium uppercase tracking-[0.08em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(81,255,115,0.3)]"
+                className="group flex h-[60px] items-center gap-4 rounded-[18px] border border-[#51FF73] bg-black px-8 lg:px-10 font-heading text-[0.8rem] lg:text-[0.85rem] font-medium uppercase tracking-[0.08em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(81,255,115,0.3)]"
               >
                 <span className="text-[#51FF73] transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
                   ↗
