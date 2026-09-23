@@ -2,11 +2,29 @@ import type { Metadata } from "next";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
 import LegalSection from "@/components/legal/LegalSection";
 import { SITE } from "@/config/site";
+import { SEO } from "@/config/seo";
+
+const description =
+  "Terms and Conditions governing the use of the ONTO DIGITAL website and related information.";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | ONTO DIGITAL",
-  description:
-    "Terms and Conditions governing the use of the ONTO DIGITAL website and related information.",
+  title: "Terms & Conditions",
+  description,
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
+  openGraph: {
+    title: `Terms & Conditions | ${SITE.name}`,
+    description,
+    url: "/terms-and-conditions",
+    images: [SEO.ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Terms & Conditions | ${SITE.name}`,
+    description,
+    images: [SEO.ogImage.url],
+  },
 };
 
 const LAST_UPDATED = "August 15, 2026";

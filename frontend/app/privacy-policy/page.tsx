@@ -2,11 +2,29 @@ import type { Metadata } from "next";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
 import LegalSection from "@/components/legal/LegalSection";
 import { SITE } from "@/config/site";
+import { SEO } from "@/config/seo";
+
+const description =
+  "Privacy Policy for ONTO DIGITAL and information about how website inquiries and submitted information are handled.";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | ONTO DIGITAL",
-  description:
-    "Privacy Policy for ONTO DIGITAL and information about how website inquiries and submitted information are handled.",
+  title: "Privacy Policy",
+  description,
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: `Privacy Policy | ${SITE.name}`,
+    description,
+    url: "/privacy-policy",
+    images: [SEO.ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Privacy Policy | ${SITE.name}`,
+    description,
+    images: [SEO.ogImage.url],
+  },
 };
 
 const LAST_UPDATED = "August 15, 2026";

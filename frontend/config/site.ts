@@ -11,5 +11,8 @@ export const SITE = {
 
   address: "Hyderabad, India",
 
-  website: "https://ontodigital.in",
+  // Canonical/base URL for metadata, OG tags, sitemap.xml, and robots.txt.
+  // Set NEXT_PUBLIC_SITE_URL in Vercel per-environment; falls back to the
+  // current production Vercel URL until the ontodigital.in domain is live.
+  website: process.env.NEXT_PUBLIC_SITE_URL || "https://ontodigital.vercel.app",
 };

@@ -10,6 +10,8 @@ import { SOCIALS } from "@/config/social";
 const FOOTER_COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Services",
+    // Slugs below are intentionally kept in sync with the seeded/admin
+    // service slugs (backend/src/scripts/seedServices.ts, frontend/data/services.ts).
     links: [
       { label: "Business Websites", href: "/services/business-websites" },
       { label: "WordPress Websites", href: "/services/wordpress-websites" },

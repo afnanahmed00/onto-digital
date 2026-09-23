@@ -9,6 +9,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
 import { homeProcess } from "@/data/homeProcess";
 import { SITE } from "@/config/site";
+import { SEO } from "@/config/seo";
 
 // Services and Work fetch from the Render backend on every render (see
 // services/services.ts and services/projects.ts) — force-dynamic keeps
@@ -27,10 +28,13 @@ export const metadata: Metadata = {
     title: `${SITE.name} | ${SITE.tagline}`,
     description: SITE.description,
     url: "/",
+    images: [SEO.ogImage],
   },
   twitter: {
+    card: "summary_large_image",
     title: `${SITE.name} | ${SITE.tagline}`,
     description: SITE.description,
+    images: [SEO.ogImage.url],
   },
 };
 

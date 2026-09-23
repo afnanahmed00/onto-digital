@@ -3,8 +3,11 @@ import { notFound } from "next/navigation";
 import ServiceDetail from "@/components/sections/ServiceDetail";
 import { getServiceBySlug } from "@/services/services";
 import { SITE } from "@/config/site";
+import { SEO } from "@/config/seo";
 import Process from "@/components/sections/Process";
 import { serviceProcess } from "@/data/serviceProcess";
+import JsonLd from "@/components/seo/JsonLd";
+import { serviceSchema, serviceBreadcrumbSchema } from "@/lib/seo/schema";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -34,10 +37,13 @@ export async function generateMetadata({
       title: `${service.breadcrumbLabel} | ${SITE.name}`,
       description: service.shortDescription,
       url: `/services/${service.slug}`,
+      images: [SEO.ogImage],
     },
     twitter: {
+      card: "summary_large_image",
       title: `${service.breadcrumbLabel} | ${SITE.name}`,
       description: service.shortDescription,
+      images: [SEO.ogImage.url],
     },
   };
 }
@@ -54,6 +60,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
   return (
     <>
+      <JsonLd data={serviceSchema(service)} />
+      <JsonLd data={serviceBreadcrumbSchema(service)} />
       <ServiceDetail service={service} />
       <Process
               badge="OUR PROCESS"

@@ -10,6 +10,9 @@ import FAQ from "@/components/sections/FAQ";
 import { serviceFaqs } from "@/data/serviceFaqs";
 import CTA from "@/components/sections/CTA";
 import { SITE } from "@/config/site";
+import { SEO } from "@/config/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { faqPageSchema } from "@/lib/seo/schema";
 
 // ServiceCollection fetches from the Render backend on every render (see
 // services/services.ts) — force-dynamic keeps that fetch off the Vercel
@@ -31,16 +34,20 @@ export const metadata: Metadata = {
     title: `Services | ${SITE.name}`,
     description,
     url: "/services",
+    images: [SEO.ogImage],
   },
   twitter: {
+    card: "summary_large_image",
     title: `Services | ${SITE.name}`,
     description,
+    images: [SEO.ogImage.url],
   },
 };
 
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={faqPageSchema(serviceFaqs)} />
       <ServicesHero />
       <ServiceCollection />
       <TechStack />

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/config/site";
+import { getServices } from "@/services/services";
 
 const routes = [
   "/",
@@ -11,11 +12,15 @@ const routes = [
   "/terms-and-conditions",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-
-  return routes.map((route) => ({
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${SITE.website}${route}`,
-    lastModified,
   }));
+
+  const services = await getServices();
+  const serviceEntries: MetadataRoute.Sitemap = services.map((service) => ({
+    url: `${SITE.website}/services/${service.slug}`,
+  }));
+
+  return [...staticEntries, ...serviceEntries];
 }

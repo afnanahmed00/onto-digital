@@ -54,6 +54,7 @@ export default function FAQ({
 
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
+              const panelId = `faq-answer-${index}`;
 
               return (
                 <div
@@ -65,6 +66,8 @@ export default function FAQ({
                     onClick={() =>
                       setOpenIndex(isOpen ? -1 : index)
                     }
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
                     className="flex w-full items-center justify-between gap-6 p-6 text-left transition-colors duration-300 active:bg-white/[0.03]"
                   >
 
@@ -85,6 +88,7 @@ export default function FAQ({
                   </button>
 
                   <div
+                    id={panelId}
                     className={`grid overflow-hidden transition-all duration-300 ${
                       isOpen
                         ? "grid-rows-[1fr]"

@@ -7,6 +7,7 @@ import Process from "@/components/sections/Process";
 import { aboutFeatures } from "@/data/aboutFeatures";
 import { aboutProcess } from "@/data/aboutProcess";
 import { SITE } from "@/config/site";
+import { SEO } from "@/config/seo";
 
 const description =
   "Learn about ONTO DIGITAL — a premium digital agency combining strategy, creativity and technology to build digital experiences that drive real growth.";
@@ -21,10 +22,13 @@ export const metadata: Metadata = {
     title: `About Us | ${SITE.name}`,
     description,
     url: "/about",
+    images: [SEO.ogImage],
   },
   twitter: {
+    card: "summary_large_image",
     title: `About Us | ${SITE.name}`,
     description,
+    images: [SEO.ogImage.url],
   },
 };
 

@@ -5,6 +5,7 @@ import Process from "@/components/sections/Process";
 import CTA from "@/components/sections/CTA";
 import { homeProcess } from "@/data/homeProcess";
 import { SITE } from "@/config/site";
+import { SEO } from "@/config/seo";
 
 const description =
   "Get in touch with ONTO DIGITAL to start your next web development, design or digital branding project.";
@@ -19,10 +20,13 @@ export const metadata: Metadata = {
     title: `Contact | ${SITE.name}`,
     description,
     url: "/contact",
+    images: [SEO.ogImage],
   },
   twitter: {
+    card: "summary_large_image",
     title: `Contact | ${SITE.name}`,
     description,
+    images: [SEO.ogImage.url],
   },
 };
 
