@@ -50,27 +50,27 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
         className="h-full w-full object-cover object-center transition-all duration-500 ease-out sm:group-hover:blur-sm sm:group-focus-visible:blur-sm"
       />
 
-      {/* Gradient so default-state text stays legible over any image, at any card height — desktop hover/focus reveal only, since mobile shows the image alone */}
-      <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-t from-black/95 via-black/45 to-transparent sm:block" />
+      {/* Always-on gradient so the compact state's text stays legible over any image, at any card height — this is the permanent mobile state and the desktop pre-hover state */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
 
-      {/* Darkening layer for the info panel — hover/focus-only from sm: up, no info panel on mobile so no darkening there */}
+      {/* Darkening layer for the full info panel — only needed behind that panel, which is desktop hover/focus-only */}
       <div className="pointer-events-none absolute inset-0 bg-[var(--background)]/0 transition-colors duration-300 sm:group-hover:bg-[var(--background)]/55 sm:group-focus-visible:bg-[var(--background)]/55" />
 
-      {/* Decorative "+" badge — desktop hover/focus reveal only, hidden on mobile so only the image shows */}
+      {/* Decorative "+" badge — part of the desktop hover/focus reveal, invisible in the default (mobile-equivalent) state */}
       <span
         aria-hidden="true"
-        className="absolute right-4 top-4 z-10 hidden h-8 w-8 -translate-y-1 items-center justify-center rounded-full bg-[var(--primary)] text-black opacity-0 transition-all duration-300 sm:flex sm:group-hover:translate-y-0 sm:group-hover:opacity-100 sm:group-focus-visible:translate-y-0 sm:group-focus-visible:opacity-100"
+        className="absolute right-4 top-4 z-10 flex h-8 w-8 -translate-y-1 items-center justify-center rounded-full bg-[var(--primary)] text-black opacity-0 transition-all duration-300 sm:group-hover:translate-y-0 sm:group-hover:opacity-100 sm:group-focus-visible:translate-y-0 sm:group-focus-visible:opacity-100"
       >
         <Plus size={16} strokeWidth={2.5} />
       </span>
 
-      {/* Compact state — name, category, arrow only. Below sm: the fuller
-          info panel (name/category/description/CTA) is shown instead, so
-          this stays hidden there; from sm: up it's the default state and
-          swaps for the fuller panel on hover, same as before. */}
+      {/* Compact state — category, name, arrow. This is the permanent mobile
+          state (mirrors desktop's pre-hover look) and desktop's own default
+          state, swapping out for the fuller info panel on hover/focus from
+          sm: up only (mobile has no hover, so it never swaps there). */}
       <div
         className={clsx(
-          "relative z-10 mt-auto hidden items-end justify-between gap-2 p-3 sm:flex sm:opacity-100 sm:transition-opacity sm:duration-300 sm:group-hover:opacity-0 sm:group-focus-visible:opacity-0 sm:gap-3 sm:p-4 lg:p-5",
+          "relative z-10 mt-auto flex items-end justify-between gap-2 p-3 opacity-100 transition-opacity duration-300 sm:group-hover:opacity-0 sm:group-focus-visible:opacity-0 sm:gap-3 sm:p-4 lg:p-5",
           large && "sm:p-5 lg:p-6"
         )}
       >
@@ -104,9 +104,9 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
         />
       </div>
 
-      {/* Full info panel — category, name, description, CTA. Hidden on
-          mobile (where cards show only the image), hover/focus-only from
-          sm: up as originally designed. */}
+      {/* Full info panel — category, name, description, CTA. Hidden entirely
+          on mobile (no hover there, so it must never appear); revealed only
+          on hover/focus from sm: up, swapping in for the compact state. */}
       <div
         className={clsx(
           "absolute inset-0 z-10 hidden flex-col justify-end p-4 opacity-0 transition-opacity duration-300 sm:flex sm:p-5 sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100",
