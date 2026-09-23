@@ -47,21 +47,19 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
         alt={`${project.name} project preview`}
         fill
         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-        className="object-cover transition-all duration-500 ease-out group-hover:scale-110 group-hover:blur-sm group-focus-visible:scale-110 group-focus-visible:blur-sm"
+        className="h-full w-full object-cover object-center transition-all duration-500 ease-out sm:group-hover:blur-sm sm:group-focus-visible:blur-sm"
       />
 
-      {/* Always-on gradient so default-state text stays legible over any image, at any card height */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
+      {/* Gradient so default-state text stays legible over any image, at any card height — desktop hover/focus reveal only, since mobile shows the image alone */}
+      <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-t from-black/95 via-black/45 to-transparent sm:block" />
 
-      {/* Darkening layer for the info panel: on by default on touch/mobile
-          (where the fuller panel below is always shown, not hover-gated),
-          hover-only from sm: up to match the original desktop reveal. */}
-      <div className="pointer-events-none absolute inset-0 bg-[var(--background)]/55 transition-colors duration-300 sm:bg-[var(--background)]/0 sm:group-hover:bg-[var(--background)]/55 sm:group-focus-visible:bg-[var(--background)]/55" />
+      {/* Darkening layer for the info panel — hover/focus-only from sm: up, no info panel on mobile so no darkening there */}
+      <div className="pointer-events-none absolute inset-0 bg-[var(--background)]/0 transition-colors duration-300 sm:group-hover:bg-[var(--background)]/55 sm:group-focus-visible:bg-[var(--background)]/55" />
 
-      {/* Decorative "+" badge — mirrors the info panel's visibility (always on below sm:, hover-only from sm: up) */}
+      {/* Decorative "+" badge — desktop hover/focus reveal only, hidden on mobile so only the image shows */}
       <span
         aria-hidden="true"
-        className="absolute right-4 top-4 z-10 flex h-8 w-8 translate-y-0 items-center justify-center rounded-full bg-[var(--primary)] text-black opacity-100 transition-all duration-300 sm:-translate-y-1 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100 sm:group-focus-visible:translate-y-0 sm:group-focus-visible:opacity-100"
+        className="absolute right-4 top-4 z-10 hidden h-8 w-8 -translate-y-1 items-center justify-center rounded-full bg-[var(--primary)] text-black opacity-0 transition-all duration-300 sm:flex sm:group-hover:translate-y-0 sm:group-hover:opacity-100 sm:group-focus-visible:translate-y-0 sm:group-focus-visible:opacity-100"
       >
         <Plus size={16} strokeWidth={2.5} />
       </span>
@@ -106,13 +104,12 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
         />
       </div>
 
-      {/* Full info panel — category, name, description, CTA. Visible by
-          default below sm: (where hover doesn't exist, so this is the only
-          way this info reaches mobile users), hover/focus-only from sm: up
-          exactly as before. */}
+      {/* Full info panel — category, name, description, CTA. Hidden on
+          mobile (where cards show only the image), hover/focus-only from
+          sm: up as originally designed. */}
       <div
         className={clsx(
-          "absolute inset-0 z-10 flex flex-col justify-end p-4 opacity-100 transition-opacity duration-300 sm:p-5 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100",
+          "absolute inset-0 z-10 hidden flex-col justify-end p-4 opacity-0 transition-opacity duration-300 sm:flex sm:p-5 sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100",
           large && "sm:p-6 lg:p-7"
         )}
       >

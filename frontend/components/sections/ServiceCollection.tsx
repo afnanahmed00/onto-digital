@@ -62,7 +62,7 @@ export default async function ServiceCollection() {
                   href={`/services/${service.slug}`}
                   className="group/link relative mt-6 flex items-center gap-2 self-start font-heading text-[0.72rem] font-medium uppercase tracking-[0.1em] text-[var(--primary)] active:opacity-80"
                 >
-                  LEARN MORE
+                  GET A QUOTE
                   <ArrowUpRight
                     size={14}
                     className="transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 group-active/link:translate-x-1 group-active/link:-translate-y-1"
